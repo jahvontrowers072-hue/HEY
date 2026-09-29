@@ -1,0 +1,12 @@
+{
+  "name": "cn-spotless-website",
+  "version": "1.0.0",
+  "description": "C&N Spotless — mobile window tinting website (static, SEO-ready)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-pages.js",
+    "preview": "node scripts/build-pages.js && npx --yes serve public -l 3000"
+  },
+  "engines": { "node": ">=20" }
+}
