@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cnspot.vercel.app/sitemap.xml
+Sitemap: https://cnspotless.shopzencho.com/sitemap.xml

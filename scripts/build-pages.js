@@ -13,7 +13,15 @@ import { fileURLToPath } from "node:url";
 import crypto from "node:crypto";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "public");
-const SITE = (process.env.SITE_URL || "https://cnspot.vercel.app").replace(/\/$/, "");
+// The one production domain. Every canonical, sitemap, Open Graph and schema URL is built from it.
+const SITE = (process.env.SITE_URL || "https://cnspotless.shopzencho.com").replace(/\/$/, "");
+
+// Real pixel sizes of images used as page heroes / social previews (keeps og:image and <img> dimensions honest).
+const IMAGE_SIZES = {
+  "w-zr1-doors": [1600, 1200],
+  "install": [1212, 952],
+  "rr-glass": [1280, 720],
+};
 
 const BUSINESS = {
   name: "C&N Spotless",
@@ -65,6 +73,7 @@ const SERVICES = [
     h1: ["Car window tinting,", "<em>done in your driveway.</em>"],
     sub: "Cars, trucks and SUVs tinted at your home or office anywhere in Broward County. Florida-legal shades, clean edges, and no day lost at a shop.",
     hero: "w-zr1-doors",
+    heroAlt: "Orange Corvette ZR1 with both doors open showing tinted side glass",
     images: [["w-gt3-doors", "Yellow Porsche 911 GT3 with doors open after a window tint install"], ["w-c6-rear", "Tinted rear window on a yellow C6 Corvette"], ["w-mustang-glass", "Freshly tinted door glass on a white Ford Mustang"]],
     body: `
       <h2>Tint that looks factory and keeps you legal in Florida.</h2>
@@ -102,6 +111,7 @@ const SERVICES = [
     h1: ["Home window film", "<em>for the Florida sun.</em>"],
     sub: "Take the heat and glare out of hot rooms, protect floors and furniture from fading, and add daytime privacy, installed at your home anywhere in Broward County.",
     hero: "install",
+    heroAlt: "Window film being squeegeed onto glass during an installation",
     images: [["install", "Window film being installed on glass with a squeegee"], ["w-mustang-glass", "Tinted glass reflecting palm trees"], ["rr-glass", "Tinted glass reflecting the sky and trees"]],
     body: `
       <h2>Cooler rooms. Less glare. Nothing fading.</h2>
@@ -137,6 +147,7 @@ const SERVICES = [
     h1: ["Commercial window tint,", "<em>on your schedule.</em>"],
     sub: "Offices, storefronts and fleet vehicles across Broward County, installed around your hours so the work never shuts you down.",
     hero: "rr-glass",
+    heroAlt: "Tinted side glass on a luxury coupe reflecting palm trees",
     images: [["w-modely", "White Tesla Model Y with tinted windows"], ["rr-glass", "Tinted side glass reflecting palm trees"], ["install", "Window film installation in progress"]],
     body: `
       <h2>Comfortable workspaces. Protected stock. No downtime.</h2>
@@ -185,9 +196,11 @@ const rootLinks = (html) => html
 /* ───────────────────────── schema ───────────────────────── */
 
 const businessId = `${SITE}/#business`;
+// Cars, homes and businesses: both LocalBusiness subtypes apply.
+const BUSINESS_TYPES = ["AutomotiveBusiness", "HomeAndConstructionBusiness"];
 const businessSchema = {
   "@context": "https://schema.org",
-  "@type": "AutomotiveBusiness",
+  "@type": BUSINESS_TYPES,
   "@id": businessId,
   name: BUSINESS.name,
   alternateName: "C&N Spotless Mobile Window Tinting",
@@ -197,7 +210,7 @@ const businessSchema = {
   email: BUSINESS.email,
   image: [`${SITE}/assets/w-zr1-doors.jpg`, `${SITE}/assets/w-gt3-doors.jpg`, `${SITE}/assets/w-c6-rear.jpg`],
   logo: `${SITE}/assets/logo-full.png`,
-  priceRange: "$$",
+  // No priceRange: the site doesn't publish prices, so none is claimed here.
   address: { "@type": "PostalAddress", addressRegion: BUSINESS.state, addressCountry: "US" },
   areaServed: [
     { "@type": "AdministrativeArea", name: `${BUSINESS.county}, ${BUSINESS.state}` },
@@ -217,6 +230,16 @@ const businessSchema = {
     })),
   },
   ...(BUSINESS.sameAs.length ? { sameAs: BUSINESS.sameAs } : {}),
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE}/#website`,
+  name: BUSINESS.name,
+  url: `${SITE}/`,
+  inLanguage: "en-US",
+  publisher: { "@id": businessId },
 };
 
 const faqSchema = (pairs) => ({
@@ -241,7 +264,7 @@ let index = fs.readFileSync(indexPath, "utf8");
 
 const homeFaqs = [...index.matchAll(/<button class="faq-q"[^>]*><span>([\s\S]*?)<\/span>[\s\S]*?<div class="faq-a"><div><p>([\s\S]*?)<\/p>/g)]
   .map((m) => [m[1], m[2]]);
-index = replaceBlock(index, "business-schema", ld(businessSchema));
+index = replaceBlock(index, "business-schema", ld(businessSchema) + "\n" + ld(websiteSchema));
 index = replaceBlock(index, "faq-schema", ld(faqSchema(homeFaqs)));
 index = stamp(index);
 fs.writeFileSync(indexPath, index);
@@ -254,12 +277,15 @@ const tail = rootLinks(between(index, "<!-- ========== FOOTER ========== -->", "
   + between(index, "<!-- ========== LEGAL MODALS ========== -->", '<script src="/assets/site.js');
 
 function img(name, alt, attrs = "") {
-  return `<img src="/assets/${name}${name.startsWith("w-") ? "-800" : ""}.jpg" alt="${esc(alt)}" loading="lazy" width="1600" height="1200"${attrs}>`;
+  // w-* photos use their 800px versions (4:3); others use their real dimensions.
+  const [w, h] = name.startsWith("w-") ? [800, 600] : (IMAGE_SIZES[name] || [1600, 1200]);
+  return `<img src="/assets/${name}${name.startsWith("w-") ? "-800" : ""}.jpg" alt="${esc(alt)}" loading="lazy" decoding="async" width="${w}" height="${h}"${attrs}>`;
 }
 
 function servicePage(s) {
   const url = `${SITE}/${s.slug}`;
   const heroSrc = `/assets/${s.hero}.jpg`;
+  const [heroW, heroH] = IMAGE_SIZES[s.hero];
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -275,7 +301,7 @@ function servicePage(s) {
     serviceType: s.name,
     url,
     description: s.desc,
-    provider: { "@id": businessId, "@type": "AutomotiveBusiness", name: BUSINESS.name, telephone: BUSINESS.phone, url: `${SITE}/` },
+    provider: { "@id": businessId, "@type": BUSINESS_TYPES, name: BUSINESS.name, telephone: BUSINESS.phone, url: `${SITE}/` },
     areaServed: businessSchema.areaServed,
   };
 
@@ -292,12 +318,20 @@ function servicePage(s) {
 <meta name="geo.region" content="US-FL">
 <meta name="geo.placename" content="${BUSINESS.county}, Florida">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="${esc(BUSINESS.name)}">
 <meta property="og:url" content="${url}">
 <meta property="og:title" content="${esc(s.title)}">
 <meta property="og:description" content="${esc(s.desc)}">
 <meta property="og:image" content="${SITE}${heroSrc}">
+<meta property="og:image:width" content="${heroW}">
+<meta property="og:image:height" content="${heroH}">
+<meta property="og:image:alt" content="${esc(s.heroAlt)}">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(s.title)}">
+<meta name="twitter:description" content="${esc(s.desc)}">
+<meta name="twitter:image" content="${SITE}${heroSrc}">
+<meta name="twitter:image:alt" content="${esc(s.heroAlt)}">
 <link rel="icon" href="/assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/favicon.png">
 <link rel="preload" as="image" href="${heroSrc}" fetchpriority="high">
@@ -313,7 +347,7 @@ ${ld(faqSchema(s.faqs))}
 
 ${chrome}<main id="main">
 <section class="hero phero">
-  <div class="hero-media"><img src="${heroSrc}" alt="" fetchpriority="high" width="1600" height="1200"></div>
+  <div class="hero-media"><img src="${heroSrc}" alt="" fetchpriority="high" width="${heroW}" height="${heroH}"></div>
   <div class="hero-sweep" aria-hidden="true"></div>
   <div class="wrap hero-in">
     <ol class="crumbs" aria-label="Breadcrumb"><li><a href="/">Home</a></li><li aria-current="page">${esc(s.short)}</li></ol>

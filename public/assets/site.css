@@ -407,7 +407,7 @@ form.qf.sent .qf-success{display:block}
   justify-content:center;transition:background .25s,border-color .25s,transform .25s}
 .socials a:hover{background:var(--red);border-color:var(--red);transform:translateY(-2px)}
 .socials svg{width:17px;height:17px;fill:currentColor}
-.foot h4{font-size:.78rem;letter-spacing:.16em;color:#fff;margin-bottom:20px}
+.foot h3{font-size:.78rem;letter-spacing:.16em;color:#fff;margin-bottom:20px}
 .foot ul{list-style:none;padding:0;margin:0;display:grid;gap:11px}
 .foot ul a,.foot ul li{font-size:.87rem;color:var(--fg-3);transition:color .2s}
 .foot ul a:hover{color:var(--red-2)}

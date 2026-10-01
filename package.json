@@ -6,7 +6,10 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build-pages.js",
-    "preview": "node scripts/build-pages.js && npx --yes serve public -l 3000"
+    "preview": "node scripts/build-pages.js && npx --yes serve public -l 3000",
+    "check": "node scripts/seo-check.mjs"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }

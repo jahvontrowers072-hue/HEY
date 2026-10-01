@@ -4,6 +4,13 @@
   "outputDirectory": "public",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/:path*", "has": [{ "type": "host", "value": "shopzencho.com" }], "destination": "https://cnspotless.shopzencho.com/:path*", "permanent": true },
+    { "source": "/:path*", "has": [{ "type": "host", "value": "cnspot.vercel.app" }], "destination": "https://cnspotless.shopzencho.com/:path*", "permanent": true },
+    { "source": "/automotive-window-tinting", "destination": "/automotive-window-tint", "permanent": true },
+    { "source": "/residential-window-tinting", "destination": "/residential-window-tint", "permanent": true },
+    { "source": "/commercial-window-tinting", "destination": "/commercial-window-tint", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
