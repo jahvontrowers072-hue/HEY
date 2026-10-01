@@ -5,27 +5,74 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/", "has": [{ "type": "host", "value": "shopzencho.com" }], "destination": "https://cnspotless.shopzencho.com/", "permanent": true },
-    { "source": "/", "has": [{ "type": "host", "value": "cnspot.vercel.app" }], "destination": "https://cnspotless.shopzencho.com/", "permanent": true },
-    { "source": "/:path*", "has": [{ "type": "host", "value": "shopzencho.com" }], "destination": "https://cnspotless.shopzencho.com/:path*", "permanent": true },
-    { "source": "/:path*", "has": [{ "type": "host", "value": "cnspot.vercel.app" }], "destination": "https://cnspotless.shopzencho.com/:path*", "permanent": true },
-    { "source": "/automotive-window-tinting", "destination": "/automotive-window-tint", "permanent": true },
-    { "source": "/residential-window-tinting", "destination": "/residential-window-tint", "permanent": true },
-    { "source": "/commercial-window-tinting", "destination": "/commercial-window-tint", "permanent": true }
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "shopzencho.com"
+        }
+      ],
+      "destination": "https://cnspotless.shopzencho.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "shopzencho.com"
+        }
+      ],
+      "destination": "https://cnspotless.shopzencho.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/automotive-window-tinting",
+      "destination": "/automotive-window-tint",
+      "permanent": true
+    },
+    {
+      "source": "/residential-window-tinting",
+      "destination": "/residential-window-tint",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-window-tinting",
+      "destination": "/commercial-window-tint",
+      "permanent": true
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Content-Security-Policy", "value": "frame-ancestors 'self' https://shopzencho.com https://*.shopzencho.com https://jahvon-site.vercel.app" },
-        { "key": "Permissions-Policy", "value": "geolocation=(), camera=(), microphone=()" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "frame-ancestors 'self' https://shopzencho.com https://*.shopzencho.com https://jahvon-site.vercel.app"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "geolocation=(), camera=(), microphone=()"
+        }
       ]
     },
     {
       "source": "/assets/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000, immutable" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, immutable"
+        }
+      ]
     }
   ]
 }

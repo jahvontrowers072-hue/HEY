@@ -670,3 +670,10 @@ form.qf.sent .ck-tick{animation:draw 350ms var(--ease-out) .55s forwards}
 .loc-dir span{transition:transform .25s}
 .loc-dir:hover span{transform:translateX(4px)}
 @media (max-width:900px){.loc-card{max-width:none}}
+
+/* Small service cards: link to the detailed section on the service page */
+.xlink{position:relative;z-index:1;display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:4px 0;font-size:.82rem;font-weight:600;color:var(--red-2)}
+.xlink span{transition:transform .25s}
+.xlink:hover span{transform:translateX(4px)}
+/* In-page anchors on service pages clear the fixed nav */
+.prose [id]{scroll-margin-top:110px}

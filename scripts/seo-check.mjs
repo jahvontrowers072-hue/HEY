@@ -104,8 +104,12 @@ for (const file of pages) {
     if (href === "#" ) continue;                                  // JS-driven controls (modals)
     if (href.startsWith("#")) { if (!ids.has(href.slice(1))) err(file, `anchor ${href} has no target`); continue; }
     const [p, hash] = href.split("#");
-    if (!fileFor(p)) { err(file, `broken internal link ${href}`); continue; }
-    if (hash && (p === "/" || p === "") && !homeIds.has(hash)) err(file, `link ${href} points to a missing homepage section`);
+    const target = fileFor(p);
+    if (!target) { err(file, `broken internal link ${href}`); continue; }
+    if (hash) {
+      const targetIds = target === "index.html" ? homeIds : new Set([...read(target).matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]));
+      if (!targetIds.has(hash)) err(file, `link ${href} points to a missing section`);
+    }
   }
 }
 

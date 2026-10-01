@@ -52,7 +52,7 @@ const BUSINESS = {
 const LAW_TABLE = `
 <div class="law">
   <table>
-    <caption>Florida Statutes §316.2951 through 316.2956. Medical exemptions are available through the Florida DHSMV.</caption>
+    <caption>Florida Statutes §316.2951 through 316.2956. Medical exemptions are available through the Florida DHSMV. Limits can change, so we confirm the current rules for your vehicle before we install.</caption>
     <thead><tr><th>Window</th><th>Cars &amp; coupes</th><th>SUVs, trucks &amp; vans</th></tr></thead>
     <tbody>
       <tr><td>Windshield</td><td>Non-reflective strip above the AS-1 line only</td><td>Non-reflective strip above the AS-1 line only</td></tr>
@@ -89,6 +89,10 @@ const SERVICES = [
         <li>Cars, coupes, convertibles, trucks, SUVs and vans</li>
         <li>Removal of old, bubbling or purple tint before re-tinting</li>
       </ul>
+      <h3 id="privacy-tint">Privacy tint</h3>
+      <p>If you want people to see less of what's inside, the rear side windows and back glass are where you can go darker. Florida allows 15% on those windows for cars and coupes, and 6% for SUVs, trucks and vans, while the front side windows stay at 28% or lighter. We'll match the shade to your vehicle type so the car looks consistent and stays legal. For privacy at home, see <a href="/residential-window-tint#daytime-privacy">residential privacy film</a>.</p>
+      <h3 id="windshield-strips">Windshield strips</h3>
+      <p>A windshield strip is a band of film across the top of the windshield that cuts glare from a low sun. Florida only allows non-reflective film above the AS-1 line, the small mark printed near the top edge of most windshields, so we cut the strip to that line rather than guessing at a width.</p>
       <h3>Choosing a film</h3>
       <p>How dark a film looks and how much heat it blocks are two different things. Standard dyed films mostly add privacy; carbon and ceramic films reject far more infrared heat, even in lighter shades, and don't fade to purple. We'll show you the manufacturer's specs for each option so you can compare real numbers before you pick.</p>
       <h3>Florida window tint law</h3>
@@ -117,7 +121,7 @@ const SERVICES = [
     heroAlt: "Window film being squeegeed onto glass during an installation",
     images: [["install", "Window film being installed on glass with a squeegee"], ["w-mustang-glass", "Tinted glass reflecting palm trees"], ["rr-glass", "Tinted glass reflecting the sky and trees"]],
     body: `
-      <h2>Cooler rooms. Less glare. Nothing fading.</h2>
+      <h2 id="heat-and-glare">Cooler rooms. Less glare. Nothing fading.</h2>
       <p>West- and south-facing windows in South Florida can make a room unusable by mid-afternoon. Residential window film cuts the solar heat and glare coming through the glass and blocks nearly all UV (the main cause of faded floors, furniture and artwork) while you keep your view.</p>
       <h3>Good fits for home window film</h3>
       <ul>
@@ -129,6 +133,8 @@ const SERVICES = [
       </ul>
       <h3>Choosing the right film</h3>
       <p>There's a range from nearly clear heat-control films, which barely change how your windows look, to darker and reflective films that add privacy. Darker isn't automatically cooler; the heat rejection depends on the film's construction. We'll walk you through the options for each room and show you the specs.</p>
+      <h3 id="daytime-privacy">Daytime privacy</h3>
+      <p>Darker and reflective films make it hard to see in during the day while you can still see out. At night, with lights on inside, that reverses, so rooms that need privacy after dark still need blinds or curtains. We'll help you choose a film that fits how you use each room. Tinting a vehicle for privacy instead? See <a href="/automotive-window-tint#privacy-tint">automotive privacy tint</a>.</p>
       <h3>Condos and HOAs</h3>
       <p>Many Broward condo associations and HOAs have rules about how tinted windows look from outside, usually the shade or how reflective it is. If you're in one, check with your association first; we're happy to provide film samples and spec sheets for their approval.</p>
       <h3>How it works</h3>

@@ -4,7 +4,7 @@
 /* ─────────────────────────────────────────────────────────────
    SITE SETTINGS
    API_URL: the address of your deployed backend (no slash at the end),
-   e.g. "https://cn-spotless-backend.vercel.app". Visitor tracking and the
+   e.g. "https://api.your-domain.com". Visitor tracking and the
    quote form send to it. Left blank, the form falls back to opening a
    pre-filled email and nothing is tracked.
    ───────────────────────────────────────────────────────────── */
