@@ -9,7 +9,9 @@
    pre-filled email and nothing is tracked.
    ───────────────────────────────────────────────────────────── */
 var API_URL = "";
-var FORM_ENDPOINT = API_URL ? API_URL + "/api/quote" : "";
+// Quote requests are emailed via Formspree (dashboard: formspree.io). A backend API_URL takes priority if set.
+var FORMSPREE_URL = "https://formspree.io/f/mjykdlkk";
+var FORM_ENDPOINT = API_URL ? API_URL + "/api/quote" : FORMSPREE_URL;
 var BUSINESS_EMAIL = "clayontrowers6@gmail.com";
 
 var $  = function(s,c){ return (c||document).querySelector(s); };
@@ -393,13 +395,28 @@ $$(".faq-q").forEach(function(btn){
     }
 
     if(FORM_ENDPOINT){
+      var toFormspree = FORM_ENDPOINT === FORMSPREE_URL;
+      // Formspree: readable labels in the email, reply goes straight to the customer,
+      // and the hidden "company" field becomes Formspree's spam trap (_gotcha).
+      var payload = toFormspree ? {
+        "_subject": "Quote request: " + data.name + " (" + (data.service || "service not chosen") + ")",
+        "email": data.email || "",
+        "Name": data.name,
+        "Phone": data.phone,
+        "Vehicle / property": data.type || "not given",
+        "Service needed": data.service || "not given",
+        "Preferred date": data.date || "not given",
+        "Area / ZIP": data.zip || "not given",
+        "Details": data.message || "not given",
+        "_gotcha": data.company || ""
+      } : data;
       fetch(FORM_ENDPOINT, {
         method:"POST",
-        headers:{ "Content-Type":"text/plain" },
-        body: JSON.stringify(data)
+        headers: toFormspree ? { "Content-Type":"application/json", "Accept":"application/json" } : { "Content-Type":"text/plain" },
+        body: JSON.stringify(payload)
       }).then(function(r){
         return r.json().catch(function(){ return {}; }).then(function(j){
-          if(!r.ok) throw new Error(j.error || "bad response");
+          if(!r.ok) throw new Error((j.errors && j.errors[0] && j.errors[0].message) || j.error || "bad response");
         });
       }).then(function(){
         done("Thanks " + (data.name.split(" ")[0] || "") + ", your request is in. We'll come back to you with a shade recommendation and a price.");
