@@ -43,7 +43,7 @@ p{margin:0}
 /* eyebrow */
 .eyebrow{display:flex;align-items:center;gap:12px;font-family:'Archivo',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-weight:800;font-style:italic;
   font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red-2);margin-bottom:20px}
-.eyebrow::before{content:"";width:30px;height:2px;background:var(--red);flex:none;transform:skewX(-20deg)}
+.eyebrow::before{content:none}
 h2+.lede,h2+p{margin-top:22px}
 .lede{color:var(--fg-2);font-size:clamp(1rem,1.25vw,1.1rem);max-width:60ch}
 .sect-head{max-width:820px;margin-bottom:clamp(38px,5vw,64px)}
@@ -614,7 +614,7 @@ form.qf.sent .ck-tick{animation:draw 350ms var(--ease-out) .55s forwards}
 .phero .hero-media img{width:100%;height:100%;object-fit:cover}
 .phero h1{max-width:20ch}
 .crumbs{display:flex;gap:8px;flex-wrap:wrap;font-size:.78rem;color:var(--fg-3);margin-bottom:20px;list-style:none;padding:0}
-.crumbs li+li::before{content:"/";margin-right:8px;color:var(--fg-3)}
+.crumbs li+li::before{content:"A";margin-right:8px;color:var(--fg-3)}
 .crumbs a:hover{color:#fff}
 .prose{max-width:68ch}
 .prose h2{margin:0 0 18px}
@@ -640,3 +640,7 @@ form.qf.sent .ck-tick{animation:draw 350ms var(--ease-out) .55s forwards}
 .related a[aria-current="page"]{border-color:var(--red)}
 @media (max-width:1080px){.split{grid-template-columns:1fr}.split-media{position:static;grid-template-columns:1fr 1fr}}
 @media (max-width:760px){.related{grid-template-columns:1fr}}
+
+/* Slanted slash shapes removed by request */
+.hero-slash{display:none}
+.quote::before{content:none}
