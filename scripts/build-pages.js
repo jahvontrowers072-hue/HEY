@@ -41,7 +41,7 @@ const BUSINESS = {
 const LAW_TABLE = `
 <div class="law">
   <table>
-    <caption>Florida Statutes §316.2951–316.2956. Medical exemptions are available through the Florida DHSMV.</caption>
+    <caption>Florida Statutes §316.2951 through 316.2956. Medical exemptions are available through the Florida DHSMV.</caption>
     <thead><tr><th>Window</th><th>Cars &amp; coupes</th><th>SUVs, trucks &amp; vans</th></tr></thead>
     <tbody>
       <tr><td>Windshield</td><td>Non-reflective strip above the AS-1 line only</td><td>Non-reflective strip above the AS-1 line only</td></tr>
@@ -60,18 +60,18 @@ const SERVICES = [
     short: "Automotive Tint",
     blurb: "Cars, trucks & SUVs",
     title: "Car Window Tinting in Broward County, FL | C&N Spotless",
-    desc: "Mobile car, truck & SUV window tinting in your driveway — Fort Lauderdale, Plantation, Davie, Weston & all of Broward. Florida-legal shades. (954) 213-7808.",
-    tag: "Automotive — Broward County, FL",
+    desc: "Mobile car, truck & SUV window tinting in your driveway: Fort Lauderdale, Plantation, Davie, Weston & all of Broward. Florida-legal shades. (954) 213-7808.",
+    tag: "Automotive · Broward County, FL",
     h1: ["Car window tinting,", "<em>done in your driveway.</em>"],
     sub: "Cars, trucks and SUVs tinted at your home or office anywhere in Broward County. Florida-legal shades, clean edges, and no day lost at a shop.",
     hero: "w-zr1-doors",
     images: [["w-gt3-doors", "Yellow Porsche 911 GT3 with doors open after a window tint install"], ["w-c6-rear", "Tinted rear window on a yellow C6 Corvette"], ["w-mustang-glass", "Freshly tinted door glass on a white Ford Mustang"]],
     body: `
-      <h2>Tint that looks factory — and keeps you legal in Florida.</h2>
-      <p>South Florida sun turns a parked car into an oven and fades dashboards and leather fast. Good window film cuts the heat and glare you feel through the glass and blocks nearly all UV, while giving you privacy on the rear windows. We install it wherever the car already is — your driveway, your office lot, your job site.</p>
+      <h2>Tint that looks factory and keeps you legal in Florida.</h2>
+      <p>South Florida sun turns a parked car into an oven and fades dashboards and leather fast. Good window film cuts the heat and glare you feel through the glass and blocks nearly all UV, while giving you privacy on the rear windows. We install it wherever the car already is: your driveway, your office lot, your job site.</p>
       <h3>What we tint</h3>
       <ul>
-        <li>Full vehicles — side windows and back glass</li>
+        <li>Full vehicles: side windows and back glass</li>
         <li>Front two windows only, to match factory-tinted rear glass</li>
         <li>Windshield visor strips (above the AS-1 line)</li>
         <li>Cars, coupes, convertibles, trucks, SUVs and vans</li>
@@ -80,14 +80,14 @@ const SERVICES = [
       <h3>Choosing a film</h3>
       <p>How dark a film looks and how much heat it blocks are two different things. Standard dyed films mostly add privacy; carbon and ceramic films reject far more infrared heat, even in lighter shades, and don't fade to purple. We'll show you the manufacturer's specs for each option so you can compare real numbers before you pick.</p>
       <h3>Florida window tint law</h3>
-      <p>Florida sets separate limits for the front side windows and the rear windows, and they differ between cars and SUVs/trucks/vans. The percentage is how much light the film lets through — lower is darker.</p>
+      <p>Florida sets separate limits for the front side windows and the rear windows, and they differ between cars and SUVs/trucks/vans. The percentage is how much light the film lets through. Lower is darker.</p>
       ${LAW_TABLE}
       <p style="margin-top:18px">Tell us the vehicle when you ask for a quote and we'll recommend the darkest shade that stays legal.</p>
       <h3>How a mobile install works</h3>
-      <p>Most full vehicles take about 2–4 hours. We need a reasonably sheltered spot — a garage, carport or shaded driveway is ideal, since wind and dust are the enemy of a clean install. Afterwards, leave the windows up for 3–5 days while the film cures; a little haze or a few small water pockets during that time is normal and clears on its own.</p>`,
+      <p>Most full vehicles take about 2 to 4 hours. We need a reasonably sheltered spot: a garage, carport or shaded driveway is ideal, since wind and dust are the enemy of a clean install. Afterwards, leave the windows up for 3 to 5 days while the film cures; a little haze or a few small water pockets during that time is normal and clears on its own.</p>`,
     faqs: [
       ["How much does car window tinting cost in Broward County?", "It depends on the vehicle, how many windows, the film you choose and whether old tint needs removing. Send us the year, make and model and we'll give you an exact price before anything is booked."],
-      ["Can you tint my car at my apartment or office?", "Yes — that's how we work. We come to your home, apartment complex, office or job site anywhere in Broward County. We just need a spot that's reasonably out of the wind and dust."],
+      ["Can you tint my car at my apartment or office?", "Yes, that's how we work. We come to your home, apartment complex, office or job site anywhere in Broward County. We just need a spot that's reasonably out of the wind and dust."],
       ["Can I roll my windows down after tinting?", "Wait 3 to 5 days. The film needs that time to cure and bond to the glass; rolling the window down early can catch the bottom edge and lift it."],
     ],
   },
@@ -98,14 +98,14 @@ const SERVICES = [
     blurb: "Homes & condos",
     title: "Home Window Tinting in Broward County, FL | C&N Spotless",
     desc: "Residential window film in Broward County. Cut heat, glare & UV fading in Fort Lauderdale, Weston, Coral Springs & more. We come to you: (954) 213-7808.",
-    tag: "Residential — Broward County, FL",
+    tag: "Residential · Broward County, FL",
     h1: ["Home window film", "<em>for the Florida sun.</em>"],
-    sub: "Take the heat and glare out of hot rooms, protect floors and furniture from fading, and add daytime privacy — installed at your home anywhere in Broward County.",
+    sub: "Take the heat and glare out of hot rooms, protect floors and furniture from fading, and add daytime privacy, installed at your home anywhere in Broward County.",
     hero: "install",
     images: [["install", "Window film being installed on glass with a squeegee"], ["w-mustang-glass", "Tinted glass reflecting palm trees"], ["rr-glass", "Tinted glass reflecting the sky and trees"]],
     body: `
       <h2>Cooler rooms. Less glare. Nothing fading.</h2>
-      <p>West- and south-facing windows in South Florida can make a room unusable by mid-afternoon. Residential window film cuts the solar heat and glare coming through the glass and blocks nearly all UV — the main cause of faded floors, furniture and artwork — while you keep your view.</p>
+      <p>West- and south-facing windows in South Florida can make a room unusable by mid-afternoon. Residential window film cuts the solar heat and glare coming through the glass and blocks nearly all UV (the main cause of faded floors, furniture and artwork) while you keep your view.</p>
       <h3>Good fits for home window film</h3>
       <ul>
         <li>Living rooms and bedrooms that bake in the afternoon sun</li>
@@ -115,13 +115,13 @@ const SERVICES = [
         <li>Condos and high-rise units with floor-to-ceiling glass</li>
       </ul>
       <h3>Choosing the right film</h3>
-      <p>There's a range from nearly clear heat-control films — which barely change how your windows look — to darker and reflective films that add privacy. Darker isn't automatically cooler; the heat rejection depends on the film's construction. We'll walk you through the options for each room and show you the specs.</p>
+      <p>There's a range from nearly clear heat-control films, which barely change how your windows look, to darker and reflective films that add privacy. Darker isn't automatically cooler; the heat rejection depends on the film's construction. We'll walk you through the options for each room and show you the specs.</p>
       <h3>Condos and HOAs</h3>
-      <p>Many Broward condo associations and HOAs have rules about how tinted windows look from outside — usually the shade or how reflective it is. If you're in one, check with your association first; we're happy to provide film samples and spec sheets for their approval.</p>
+      <p>Many Broward condo associations and HOAs have rules about how tinted windows look from outside, usually the shade or how reflective it is. If you're in one, check with your association first; we're happy to provide film samples and spec sheets for their approval.</p>
       <h3>How it works</h3>
-      <p>Tell us roughly how many windows and their sizes (photos help) and we'll quote it. On install day we clean the glass, fit the film to each pane and clean up after ourselves. Film can look slightly hazy for a few days while it cures — that's normal and clears on its own.</p>`,
+      <p>Tell us roughly how many windows and their sizes (photos help) and we'll quote it. On install day we clean the glass, fit the film to each pane and clean up after ourselves. Film can look slightly hazy for a few days while it cures. That's normal and clears on its own.</p>`,
     faqs: [
-      ["Does window film really make a room cooler?", "Yes — solar control film reduces the heat coming through sunny windows, which makes a noticeable difference in rooms that get direct sun. How much depends on the film, so we'll show you each option's heat-rejection rating."],
+      ["Does window film really make a room cooler?", "Yes, solar control film reduces the heat coming through sunny windows, which makes a noticeable difference in rooms that get direct sun. How much depends on the film, so we'll show you each option's heat-rejection rating."],
       ["Will tinting my windows make my house dark inside?", "Not unless you want it to. Many heat-control films are light or nearly clear. You choose the balance between light, heat reduction and privacy."],
       ["Can you tint sliding glass doors and sunrooms?", "Yes. Sliders, French doors, sunrooms and Florida rooms are some of the most common residential jobs we do."],
     ],
@@ -132,31 +132,31 @@ const SERVICES = [
     short: "Commercial Tint",
     blurb: "Offices, storefronts & fleets",
     title: "Commercial Window Tinting in Broward County | C&N Spotless",
-    desc: "Office, storefront & fleet window tinting across Broward County, FL — installed around your business hours. Free quote: (954) 213-7808.",
-    tag: "Commercial — Broward County, FL",
+    desc: "Office, storefront & fleet window tinting across Broward County, FL, installed around your business hours. Free quote: (954) 213-7808.",
+    tag: "Commercial · Broward County, FL",
     h1: ["Commercial window tint,", "<em>on your schedule.</em>"],
-    sub: "Offices, storefronts and fleet vehicles across Broward County — installed around your hours so the work never shuts you down.",
+    sub: "Offices, storefronts and fleet vehicles across Broward County, installed around your hours so the work never shuts you down.",
     hero: "rr-glass",
     images: [["w-modely", "White Tesla Model Y with tinted windows"], ["rr-glass", "Tinted side glass reflecting palm trees"], ["install", "Window film installation in progress"]],
     body: `
       <h2>Comfortable workspaces. Protected stock. No downtime.</h2>
-      <p>Sun through big panes of commercial glass means hot offices, glare on screens and faded merchandise in the window. Commercial window film tackles all three and blocks nearly all UV — and because we're mobile, we come to you and work around your opening hours.</p>
+      <p>Sun through big panes of commercial glass means hot offices, glare on screens and faded merchandise in the window. Commercial window film tackles all three and blocks nearly all UV. And because we're mobile, we come to you and work around your opening hours.</p>
       <h3>What we do for businesses</h3>
       <ul>
-        <li><b>Offices</b> — cut heat and screen glare, add privacy for conference rooms and ground-floor offices</li>
-        <li><b>Storefronts &amp; retail</b> — reduce fading on products in window displays and keep the front of the store comfortable</li>
-        <li><b>Restaurants &amp; waiting areas</b> — take the glare and heat out of window seating</li>
-        <li><b>Fleet vehicles</b> — consistent, Florida-legal tint across company cars, trucks and vans</li>
+        <li><b>Offices</b>: cut heat and screen glare, add privacy for conference rooms and ground-floor offices</li>
+        <li><b>Storefronts &amp; retail</b>: reduce fading on products in window displays and keep the front of the store comfortable</li>
+        <li><b>Restaurants &amp; waiting areas</b>: take the glare and heat out of window seating</li>
+        <li><b>Fleet vehicles</b>: consistent, Florida-legal tint across company cars, trucks and vans</li>
       </ul>
       <h3>Scheduled around your business</h3>
       <p>We can install before you open, after close or on weekends so customers and staff aren't disrupted. For larger buildings, we'll quote by the number and size of the windows and can work in stages.</p>
       <h3>Fleet tinting</h3>
-      <p>Company vehicles have to follow the same Florida tint limits as personal cars — 28% on the front side windows, with the rear limit depending on whether it's a car (15%) or an SUV, truck or van (6%). We'll keep every vehicle in your fleet legal and matching.</p>
+      <p>Company vehicles have to follow the same Florida tint limits as personal cars: 28% on the front side windows, with the rear limit depending on whether it's a car (15%) or an SUV, truck or van (6%). We'll keep every vehicle in your fleet legal and matching.</p>
       <h3>Getting a quote</h3>
       <p>Send us the address, roughly how many windows (or vehicles), and photos if you have them. We'll come back with a film recommendation and a price.</p>`,
     faqs: [
       ["Can you tint our office after business hours?", "Yes. We regularly schedule commercial installs early in the morning, after close or on weekends so there's no disruption."],
-      ["Do you tint company fleets?", "Yes — cars, trucks and vans, all kept within Florida's legal limits and matched across the fleet. We come to your lot."],
+      ["Do you tint company fleets?", "Yes, cars, trucks and vans, all kept within Florida's legal limits and matched across the fleet. We come to your lot."],
       ["Will window film help protect merchandise from fading?", "Window film blocks nearly all UV light, which is a major cause of fading. It reduces fading substantially, though no film stops it completely because visible light and heat also contribute."],
     ],
   },
@@ -409,7 +409,7 @@ ${chrome}<main id="main">
 <section class="hero phero">
   <div class="hero-media"><img src="/assets/hero-poster.jpg" alt="" width="1280" height="720"></div>
   <div class="wrap hero-in">
-    <span class="hero-tag"><i></i> 404 — Page not found</span>
+    <span class="hero-tag"><i></i> 404 · Page not found</span>
     <h1><span class="ln"><span>That page</span></span> <span class="ln"><em>isn't here.</em></span></h1>
     <p class="hero-sub">It may have moved. Head back to the homepage, or get in touch for a free quote.</p>
     <div class="hero-btns">

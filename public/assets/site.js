@@ -378,7 +378,7 @@ $$(".faq-q").forEach(function(btn){
           if(!r.ok) throw new Error(j.error || "bad response");
         });
       }).then(function(){
-        done("Thanks " + (data.name.split(" ")[0] || "") + " — your request is in. We'll come back to you with a shade recommendation and a price.");
+        done("Thanks " + (data.name.split(" ")[0] || "") + ", your request is in. We'll come back to you with a shade recommendation and a price.");
       }).catch(function(err){
         btn.disabled = false;
         btn.style.opacity = "";
@@ -390,24 +390,24 @@ $$(".faq-q").forEach(function(btn){
       var lines = [
         "Name: " + data.name,
         "Phone: " + data.phone,
-        "Email: " + (data.email || "—"),
+        "Email: " + (data.email || "not given"),
         "Vehicle / property: " + data.type,
         "Service needed: " + data.service,
-        "Preferred date: " + (data.date || "—"),
-        "Area / ZIP: " + (data.zip || "—"),
+        "Preferred date: " + (data.date || "not given"),
+        "Area / ZIP: " + (data.zip || "not given"),
         "",
         "Details:",
-        (data.message || "—")
+        (data.message || "not given")
       ].join("\n");
       var href = "mailto:" + BUSINESS_EMAIL +
-                 "?subject=" + encodeURIComponent("Quote request — " + data.name + " (" + data.service + ")") +
+                 "?subject=" + encodeURIComponent("Quote request: " + data.name + " (" + data.service + ")") +
                  "&body=" + encodeURIComponent(lines);
       var a = document.createElement("a");
       a.href = href; a.rel = "noopener"; a.style.display = "none";
       document.body.appendChild(a);
       a.click();
       setTimeout(function(){ a.remove(); }, 0);
-      done("Your email app should be opening with the details filled in — hit send and it's on its way. If nothing opened, call or text us on (954) 213-7808.");
+      done("Your email app should be opening with the details filled in. Hit send and it's on its way. If nothing opened, call or text us on (954) 213-7808.");
     }
   });
 
