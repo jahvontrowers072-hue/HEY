@@ -22,9 +22,33 @@ $$(".today").forEach(function(el){
   el.textContent = new Date().toLocaleDateString(undefined,{year:"numeric",month:"long",day:"numeric"});
 });
 
-/* ---------- hero video: respect reduced motion ---------- */
+/* ---------- hero video + vehicle strip: always moving, with a pause control ---------- */
 var heroVid = $(".hero-media video");
-if(heroVid && reduce){ try{ heroVid.pause(); }catch(e){} }
+var motionBtn = $("#motionToggle");
+// Browsers sometimes skip autoplay (tab not visible yet, battery saver, reduce-motion);
+// keep nudging it until it runs, unless the visitor has pressed pause.
+function playHero(){
+  if(!heroVid || !heroVid.paused || document.documentElement.classList.contains("motion-paused")) return;
+  heroVid.muted = true;
+  var p = heroVid.play(); if(p && p.catch) p.catch(function(){});
+}
+if(heroVid){
+  playHero();
+  heroVid.addEventListener("canplay", playHero);
+  document.addEventListener("visibilitychange", function(){ if(!document.hidden) playHero(); });
+  ["pointerdown","keydown","touchstart","scroll"].forEach(function(ev){
+    window.addEventListener(ev, playHero, { passive: true, once: true });
+  });
+}
+if(motionBtn){
+  motionBtn.addEventListener("click", function(){
+    var paused = motionBtn.getAttribute("aria-pressed") !== "true";
+    motionBtn.setAttribute("aria-pressed", String(paused));
+    motionBtn.setAttribute("aria-label", paused ? "Play background video and moving banner" : "Pause background video and moving banner");
+    document.documentElement.classList.toggle("motion-paused", paused);
+    if(heroVid){ try{ paused ? heroVid.pause() : heroVid.play(); }catch(e){} }
+  });
+}
 
 /* ---------- sticky nav + mobile call bar ---------- */
 var nav = $("#nav"), mbar = $("#mbar"), heroEl = $(".hero"), quoteEl = $("#quote");

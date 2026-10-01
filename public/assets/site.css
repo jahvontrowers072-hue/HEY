@@ -589,7 +589,7 @@ form.qf.sent .ck-tick{animation:draw 350ms var(--ease-out) .55s forwards}
   .svc.rv .svc-img,.gal button.rv figure,.proc-strip.rv img,.trust-grid li svg{transform:none}
   .why-media.rv{clip-path:none}
   .why-badge{transform:none;transition:none}
-  .marq-track{animation:none}
+
   .drawer.open nav a{animation:fadeIn 300ms ease forwards;transform:none}
   .svc-img img,.gal img,.btn,.xcard,.vlt,.gal button{transition-property:opacity,background-color,border-color,color}
   form.qf.sent .qf-success{animation:fadeIn 300ms ease both}
@@ -644,3 +644,15 @@ form.qf.sent .ck-tick{animation:draw 350ms var(--ease-out) .55s forwards}
 /* Slanted slash shapes removed by request */
 .hero-slash{display:none}
 .quote::before{content:none}
+
+/* Hero video + vehicle strip keep moving; this button pauses both */
+.motion-paused .marq-track{animation-play-state:paused}
+.motion-toggle{position:absolute;right:var(--gut);bottom:clamp(20px,3vw,32px);z-index:3;width:44px;height:44px;border-radius:50%;
+  display:grid;place-items:center;background:rgba(8,8,10,.55);border:1px solid rgba(255,255,255,.22);color:#fff;cursor:pointer;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .25s,border-color .25s}
+.motion-toggle:hover{background:rgba(8,8,10,.8);border-color:rgba(255,255,255,.5)}
+.motion-toggle:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.motion-toggle svg{width:16px;height:16px;stroke:currentColor;stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.motion-toggle .mt-play{fill:currentColor;stroke-width:1.5}
+.motion-toggle .mt-play,.motion-toggle[aria-pressed="true"] .mt-pause{display:none}
+.motion-toggle[aria-pressed="true"] .mt-play{display:block}
