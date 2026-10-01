@@ -29,6 +29,9 @@ const BUSINESS = {
   phoneDisplay: "(954) 213-7808",
   email: "clayontrowers6@gmail.com",
   county: "Broward County",
+  street: "3000 NW 43rd Terrace",
+  city: "Lauderdale Lakes",
+  zip: "33313",
   state: "FL",
   cities: [
     "Fort Lauderdale", "Plantation", "Davie", "Sunrise", "Weston", "Pembroke Pines", "Miramar", "Hollywood",
@@ -211,7 +214,14 @@ const businessSchema = {
   image: [`${SITE}/assets/w-zr1-doors.jpg`, `${SITE}/assets/w-gt3-doors.jpg`, `${SITE}/assets/w-c6-rear.jpg`],
   logo: `${SITE}/assets/logo-full.png`,
   // No priceRange: the site doesn't publish prices, so none is claimed here.
-  address: { "@type": "PostalAddress", addressRegion: BUSINESS.state, addressCountry: "US" },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: BUSINESS.street,
+    addressLocality: BUSINESS.city,
+    addressRegion: BUSINESS.state,
+    postalCode: BUSINESS.zip,
+    addressCountry: "US",
+  },
   areaServed: [
     { "@type": "AdministrativeArea", name: `${BUSINESS.county}, ${BUSINESS.state}` },
     ...BUSINESS.cities.map((c) => ({ "@type": "City", name: `${c}, ${BUSINESS.state}` })),
