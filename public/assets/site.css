@@ -677,3 +677,6 @@ form.qf.sent .ck-tick{animation:draw 350ms var(--ease-out) .55s forwards}
 .xlink:hover span{transform:translateX(4px)}
 /* In-page anchors on service pages clear the fixed nav */
 .prose [id]{scroll-margin-top:110px}
+/* Service-area card: the descriptive line is text, not a link */
+.loc-lines p.loc-line{margin:0;font-weight:500;color:var(--fg-2)}
+.loc-lines p.loc-line:hover{color:var(--fg-2)}

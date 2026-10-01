@@ -29,9 +29,8 @@ const BUSINESS = {
   phoneDisplay: "(954) 213-7808",
   email: "clayontrowers6@gmail.com",
   county: "Broward County",
-  street: "3000 NW 43rd Terrace",
-  city: "Lauderdale Lakes",
-  zip: "33313",
+  // Service-area business: customers are served at their own address, so no street
+  // address is published here or on the site. The service area is described below.
   state: "FL",
   cities: [
     "Fort Lauderdale", "Plantation", "Davie", "Sunrise", "Weston", "Pembroke Pines", "Miramar", "Hollywood",
@@ -220,16 +219,14 @@ const businessSchema = {
   image: [`${SITE}/assets/w-zr1-doors.jpg`, `${SITE}/assets/w-gt3-doors.jpg`, `${SITE}/assets/w-c6-rear.jpg`],
   logo: `${SITE}/assets/logo-full.png`,
   // No priceRange: the site doesn't publish prices, so none is claimed here.
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: BUSINESS.street,
-    addressLocality: BUSINESS.city,
-    addressRegion: BUSINESS.state,
-    postalCode: BUSINESS.zip,
-    addressCountry: "US",
-  },
+  // Region only: a mobile, service-area business with no customer-facing premises.
+  address: { "@type": "PostalAddress", addressRegion: BUSINESS.state, addressCountry: "US" },
   areaServed: [
-    { "@type": "AdministrativeArea", name: `${BUSINESS.county}, ${BUSINESS.state}` },
+    {
+      "@type": "AdministrativeArea",
+      name: `${BUSINESS.county}, ${BUSINESS.state}`,
+      containedInPlace: { "@type": "State", name: "Florida" },
+    },
     ...BUSINESS.cities.map((c) => ({ "@type": "City", name: `${c}, ${BUSINESS.state}` })),
   ],
   openingHoursSpecification: [{
