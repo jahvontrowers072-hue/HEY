@@ -198,7 +198,7 @@ h2+.lede,h2+p{margin-top:22px}
   background:#000;touch-action:pan-y;user-select:none;cursor:ew-resize;box-shadow:var(--shadow)}
 .stage img.base{width:100%;display:block;pointer-events:none}
 .film{position:absolute;inset:0;background:#04060A;pointer-events:none;
-  -webkit-mask-image:url(/assets/glass-mask.png);mask-image:url(/assets/glass-mask.png);
+  -webkit-mask-image:url(/assets/glass-mask.png?v=2);mask-image:url(/assets/glass-mask.png?v=2);
   -webkit-mask-size:100% 100%;mask-size:100% 100%;
   -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
   transition:opacity 300ms var(--ease-in-out)}
