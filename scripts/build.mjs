@@ -76,7 +76,7 @@ if (env.CONTACT_EMAIL) {
   html = html.replace(/var BUSINESS_EMAIL = "[^"]*";/, `var BUSINESS_EMAIL = ${JSON.stringify(env.CONTACT_EMAIL)};`);
 }
 
-const DEFAULT_HOST = 'cnspotlesswindowmobiletint.com';
+const DEFAULT_HOST = 'cnspot.vercel.app';
 const siteUrl = (env.SITE_URL || `https://${DEFAULT_HOST}`).replace(/\/+$/, '');
 
 let siteHost = DEFAULT_HOST;

@@ -13,7 +13,7 @@ import { fileURLToPath } from "node:url";
 import crypto from "node:crypto";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "public");
-const SITE = (process.env.SITE_URL || "https://cnspotlesswindowmobiletint.com").replace(/\/$/, "");
+const SITE = (process.env.SITE_URL || "https://cnspot.vercel.app").replace(/\/$/, "");
 
 const BUSINESS = {
   name: "C&N Spotless",
