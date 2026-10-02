@@ -14,7 +14,7 @@ import crypto from "node:crypto";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "public");
 // The one production domain. Every canonical, sitemap, Open Graph and schema URL is built from it.
-const SITE = (process.env.SITE_URL || "https://cnspotless.shopzencho.com").replace(/\/$/, "");
+const SITE = (process.env.SITE_URL || "https://cnmobiletinting.shopzencho.com").replace(/\/$/, "");
 
 // Real pixel sizes of images used as page heroes / social previews (keeps og:image and <img> dimensions honest).
 const IMAGE_SIZES = {

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cnspotless.shopzencho.com/sitemap.xml
+Sitemap: https://cnmobiletinting.shopzencho.com/sitemap.xml

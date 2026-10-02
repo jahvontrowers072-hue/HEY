@@ -5,8 +5,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "public");
-const SITE = "https://cnspotless.shopzencho.com";
-const FORBIDDEN = [/cnspotlesswindowmobiletint/i, /cnspot\.vercel\.app/i, /localhost/i, /127\.0\.0\.1/, /example\.com/i, /\(000\)\s*000-0000/];
+const SITE = "https://cnmobiletinting.shopzencho.com";
+const FORBIDDEN = [/cnspotless\.shopzencho\.com/i, /cnspotlesswindowmobiletint/i, /cnspot\.vercel\.app/i, /localhost/i, /127\.0\.0\.1/, /example\.com/i, /\(000\)\s*000-0000/];
 
 const errors = [], warnings = [];
 const err = (page, msg) => errors.push(`${page}: ${msg}`);
