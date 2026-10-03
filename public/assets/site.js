@@ -161,12 +161,8 @@ if("IntersectionObserver" in window && spyIds.length){
   spyIds.forEach(function(h){ spy.observe(document.querySelector(h)); });
 }
 
-/* ---------- shade visualiser ---------- */
-(function(){
-  var stage = $("#stage"); if(!stage) return;
-  var filmL = $("#filmL"), filmR = $("#filmR"),
-      tagL = $("#tagL"), tagR = $("#tagR"), handle = $("#handle"),
-      btns = $$(".vlt");
+/* ---------- drag-to-compare slider (shade visualiser, before/after) ---------- */
+function compareSlider(stage, handle){
   var split = 50, dragging = false;
 
   function applySplit(p){
@@ -205,17 +201,42 @@ if("IntersectionObserver" in window && spyIds.length){
     else if(e.key === "Home"){ e.preventDefault(); applySplit(0); }
     else if(e.key === "End"){ e.preventDefault(); applySplit(100); }
   });
+  applySplit(50);
+  return { set: applySplit, get: function(){ return split; } };
+}
 
+/* ---------- shade visualiser ---------- */
+(function(){
+  var stage = $("#stage"); if(!stage) return;
+  var filmR = $("#filmR"), tagR = $("#tagR"), btns = $$(".vlt");
+  var slider = compareSlider(stage, $("#handle"));
   btns.forEach(function(b){
     b.addEventListener("click", function(){
       btns.forEach(function(o){ o.setAttribute("aria-pressed","false"); });
       b.setAttribute("aria-pressed","true");
       filmR.style.opacity = b.getAttribute("data-op");
       tagR.textContent = b.getAttribute("data-label");
-      if(split > 92) applySplit(55);
+      if(slider.get() > 92) slider.set(55);
     });
   });
-  applySplit(50);
+})();
+
+/* ---------- before / after ---------- */
+(function(){
+  var stage = $("#baStage"); if(stage) compareSlider(stage, $("#baHandle"));
+  // Walkaround video plays only while on screen (like the hero); tap to pause/play. Respects the motion toggle.
+  var fig = $(".ba-vid"), vid = fig && $("video", fig); if(!vid) return;
+  var userPaused = false;
+  function canPlay(){ return !userPaused && !document.documentElement.classList.contains("motion-paused"); }
+  function play(){ var p = vid.play(); if(p && p.catch) p.catch(function(){}); }
+  if("IntersectionObserver" in window){
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting && canPlay()) play(); else vid.pause(); });
+    }, { threshold: 0.35 }).observe(vid);
+  }
+  fig.addEventListener("click", function(){
+    if(vid.paused){ userPaused = false; play(); } else { userPaused = true; vid.pause(); }
+  });
 })();
 
 /* ---------- FAQ accordion ---------- */

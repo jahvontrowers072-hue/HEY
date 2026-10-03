@@ -214,6 +214,20 @@ h2+.lede,h2+p{margin-top:22px}
   font-family:'Archivo',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-weight:800;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;pointer-events:none}
 .stage-tag.l{left:14px}.stage-tag.r{right:14px;color:var(--red-2)}
 .stage-note{margin-top:14px;font-size:.76rem;color:var(--fg-3);line-height:1.5}
+.stage-note b{color:var(--fg-2)}
+
+/* ============ BEFORE / AFTER ============ */
+/* columns sized so the 1600x1060 photo and the 9:16 video share one height */
+.ba{display:grid;grid-template-columns:2.68fr 1fr;gap:clamp(10px,1.2vw,16px);align-items:start;margin-bottom:clamp(28px,4vw,48px)}
+.ba-before{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;
+  clip-path:inset(0 calc(100% - var(--split,50%)) 0 0)}
+.ba-vid{position:relative;margin:0;border:1px solid var(--line-2);border-radius:var(--r);overflow:hidden;background:#000;
+  box-shadow:var(--shadow);cursor:pointer}
+.ba-vid video{width:100%;aspect-ratio:9/16;object-fit:cover}
+@media (max-width:860px){
+  .ba{grid-template-columns:1fr}
+  .ba-vid{max-width:260px;width:100%;justify-self:center}
+}
 
 .shade-panel h2{margin-bottom:18px}
 .vlt-list{display:grid;gap:9px;margin:28px 0 24px;list-style:none;padding:0}
