@@ -18,6 +18,24 @@ var $  = function(s,c){ return (c||document).querySelector(s); };
 var $$ = function(s,c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)); };
 var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+/* ---------- always open at the top ---------- */
+// Phones restore the old scroll spot on reload/reopen, and a shared link like /#quote
+// would land at the form. Only honour a #section when it came from a link on this site.
+var fromSite = false;
+try{ fromSite = !!document.referrer && new URL(document.referrer).origin === location.origin; }catch(e){}
+if("scrollRestoration" in history) history.scrollRestoration = "manual";
+if(location.hash && !fromSite){
+  history.replaceState(null, "", location.pathname + location.search);
+}
+if(!location.hash){
+  window.scrollTo(0, 0);
+  var touched = false;
+  ["touchstart","wheel","keydown"].forEach(function(ev){
+    window.addEventListener(ev, function(){ touched = true; }, { passive: true, once: true });
+  });
+  window.addEventListener("load", function(){ if(!touched && !location.hash) window.scrollTo(0, 0); });
+}
+
 /* ---------- year ---------- */
 var yr = $("#yr"); if(yr) yr.textContent = new Date().getFullYear();
 $$(".today").forEach(function(el){
@@ -108,7 +126,6 @@ $$('a[href^="#"]').forEach(function(a){
     var off = nav.offsetHeight - 1;
     var y = t.getBoundingClientRect().top + window.pageYOffset - (id === "#top" ? 0 : off);
     window.scrollTo({ top: Math.max(0,y), behavior: reduce ? "auto" : "smooth" });
-    if(history.replaceState) history.replaceState(null,"",id);
   });
 });
 
