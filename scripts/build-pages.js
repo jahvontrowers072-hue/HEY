@@ -363,7 +363,7 @@ ${chrome}<main id="main">
   <div class="hero-media"><img src="${heroSrc}" alt="" fetchpriority="high" width="${heroW}" height="${heroH}"></div>
   <div class="hero-sweep" aria-hidden="true"></div>
   <div class="wrap hero-in">
-    <ol class="crumbs" aria-label="Breadcrumb"><li><a href="/">Home</a></li><li aria-current="page">${esc(s.short)}</li></ol>
+    <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="/">Home</a></li><li aria-current="page">${esc(s.name)}</li></ol></nav>
     <span class="hero-tag"><i></i> ${esc(s.tag)}</span>
     <h1>${s.h1.map((l) => `<span class="ln">${l.startsWith("<em>") ? l : `<span>${l}</span>`}</span>`).join(" ")}</h1>
     <p class="hero-sub">${s.sub}</p>
