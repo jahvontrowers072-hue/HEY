@@ -50,7 +50,7 @@ export function loadEnv() {
 export const PLACEHOLDERS = [
   { find: '(000) 000-0000', env: 'CONTACT_PHONE',      label: 'phone number (display)' },
   { find: '+10000000000',   env: 'CONTACT_PHONE_E164', label: 'phone number (tel: link)' },
-  { find: 'info@cnmobiletinting.shopzencho.com', env: 'CONTACT_EMAIL', label: 'contact email' },
+  { find: 'info@cnspotlessmobilewindowtint.com', env: 'CONTACT_EMAIL', label: 'contact email' },
 ];
 
 export const bytes = n =>

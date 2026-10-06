@@ -76,7 +76,7 @@ if (env.CONTACT_EMAIL) {
   html = html.replace(/var BUSINESS_EMAIL = "[^"]*";/, `var BUSINESS_EMAIL = ${JSON.stringify(env.CONTACT_EMAIL)};`);
 }
 
-const DEFAULT_HOST = 'cnmobiletinting.shopzencho.com';
+const DEFAULT_HOST = 'www.cnspotlessmobilewindowtint.com';
 const siteUrl = (env.SITE_URL || `https://${DEFAULT_HOST}`).replace(/\/+$/, '');
 
 let siteHost = DEFAULT_HOST;

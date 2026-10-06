@@ -13,7 +13,7 @@
           "value": "shopzencho.com"
         }
       ],
-      "destination": "https://cnmobiletinting.shopzencho.com/",
+      "destination": "https://www.cnspotlessmobilewindowtint.com/",
       "permanent": true
     },
     {
@@ -24,7 +24,29 @@
           "value": "shopzencho.com"
         }
       ],
-      "destination": "https://cnmobiletinting.shopzencho.com/:path*",
+      "destination": "https://www.cnspotlessmobilewindowtint.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "cnmobiletinting.shopzencho.com"
+        }
+      ],
+      "destination": "https://www.cnspotlessmobilewindowtint.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "cnmobiletinting.shopzencho.com"
+        }
+      ],
+      "destination": "https://www.cnspotlessmobilewindowtint.com/:path*",
       "permanent": true
     },
     {
