@@ -619,7 +619,7 @@ form.qf.sent .ck-tick{animation:draw 350ms var(--ease-out) .55s forwards}
 .area-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0 24px}
 .area-list li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.92rem;color:var(--fg-2);display:flex;align-items:center;gap:10px}
 .area-list li::before{content:"";width:6px;height:6px;flex:none;background:var(--red);transform:skewX(-20deg)}
-.area-list a{color:var(--fg);text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:4px;transition:color .2s}
+.area-list a{color:inherit;transition:color .2s}
 .area-list a:hover{color:var(--red-2)}
 @media (max-width:1080px){.area-layout{grid-template-columns:1fr}}
 @media (max-width:560px){.area-list{grid-template-columns:1fr 1fr}}
