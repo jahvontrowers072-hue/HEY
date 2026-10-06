@@ -656,8 +656,7 @@ form.qf.sent .ck-tick{animation:draw 350ms var(--ease-out) .55s forwards}
 .related span{font-size:.86rem;color:var(--fg-3)}
 .related a[aria-current="page"]{border-color:var(--red)}
 @media (max-width:1080px){.split{grid-template-columns:1fr}.split-media{position:static;grid-template-columns:1fr 1fr}}
-.related.cities{grid-template-columns:repeat(4,1fr);margin-top:clamp(14px,1.6vw,22px)}
-@media (max-width:760px){.related{grid-template-columns:1fr}.related.cities{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.related{grid-template-columns:1fr}}
 
 /* Slanted slash shapes removed by request */
 .hero-slash{display:none}

@@ -593,9 +593,6 @@ ${s.city
     <nav class="related rv" aria-label="Our services">
 ${SERVICES.map((o) => `      <a href="/${o.slug}"${o.slug === s.slug ? ' aria-current="page"' : ""}><b>${esc(o.short)}</b><span>${esc(o.blurb)}</span></a>`).join("\n")}
     </nav>
-    <nav class="related cities rv" aria-label="Cities we serve">
-${CITY_PAGES.map((c) => `      <a href="/${c.slug}"${c.slug === s.slug ? ' aria-current="page"' : ""}><b>${esc(c.city)}</b><span>${esc(c.county)}</span></a>`).join("\n")}
-    </nav>
   </div>
 </section>
 
