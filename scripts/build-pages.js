@@ -404,8 +404,8 @@ const businessSchema = {
   ],
   openingHoursSpecification: [{
     "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    opens: "08:00", closes: "18:00",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    opens: "08:30", closes: "18:00",
   }],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
