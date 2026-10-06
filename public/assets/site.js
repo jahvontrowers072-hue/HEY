@@ -239,51 +239,6 @@ function compareSlider(stage, handle){
   });
 })();
 
-/* ---------- service-area map: satellite + county outlines ---------- */
-// Leaflet and the tiles load only when the map is about to scroll into view.
-(function(){
-  var el = $("#areaMap"); if(!el) return;
-  var LEAFLET = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/";
-  var ESRI = "https://server.arcgisonline.com/ArcGIS/rest/services/";
-  var started = false;
-
-  function start(){
-    if(started) return; started = true;
-    var css = document.createElement("link");
-    css.rel = "stylesheet"; css.href = LEAFLET + "leaflet.min.css";
-    document.head.appendChild(css);
-    var s = document.createElement("script");
-    s.src = LEAFLET + "leaflet.min.js"; s.onload = draw;
-    document.head.appendChild(s);
-  }
-
-  function draw(){
-    var L = window.L; if(!L) return;
-    // One-finger drag on phones would trap page scrolling, so phones pan with the +/- buttons instead.
-    var map = L.map(el, { scrollWheelZoom: false, dragging: !L.Browser.mobile, tap: false, zoomSnap: 0.25 })
-      .setView([26.2, -80.4], 8);
-    map.attributionControl.setPrefix(false);
-    L.tileLayer(ESRI + "World_Imagery/MapServer/tile/{z}/{y}/{x}", {
-      maxZoom: 18, attribution: "Imagery &copy; Esri"
-    }).addTo(map);
-    L.tileLayer(ESRI + "Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}", { maxZoom: 18 }).addTo(map);
-    fetch("/assets/service-area.json").then(function(r){ return r.json(); }).then(function(geo){
-      var area = L.geoJSON(geo, {
-        style: { color: "#FF2E36", weight: 2, dashArray: "6 5", fillColor: "#E11B22", fillOpacity: 0.07 },
-        onEachFeature: function(f, layer){ layer.bindTooltip(f.properties.name, { sticky: true, className: "area-tip" }); }
-      }).addTo(map);
-      map.fitBounds(area.getBounds(), { padding: [10, 10] });
-    }).catch(function(){});
-  }
-
-  if("IntersectionObserver" in window){
-    var io = new IntersectionObserver(function(es){
-      if(es.some(function(e){ return e.isIntersecting; })){ io.disconnect(); start(); }
-    }, { rootMargin: "400px 0px" });
-    io.observe(el);
-  } else { start(); }
-})();
-
 /* ---------- FAQ accordion ---------- */
 $$(".faq-q").forEach(function(btn){
   var panel = btn.nextElementSibling;
