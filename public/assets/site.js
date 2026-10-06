@@ -403,6 +403,29 @@ $$(".faq-q").forEach(function(btn){
     });
   });
 
+  /* Bot checks. A real visitor never trips these; a blocked bot is shown the normal
+     "thanks" message and nothing is sent, so it has no signal to adapt to. */
+  var loadedAt = Date.now(), humanInput = false;
+  ["pointerdown","keydown","touchstart"].forEach(function(ev){
+    form.addEventListener(ev, function(){ humanInput = true; }, { passive: true });
+  });
+  var RATE_KEY = "cns_quote_times", RATE_MAX = 3, RATE_WINDOW = 3600000;
+  function recentSends(){
+    try{
+      var t = JSON.parse(localStorage.getItem(RATE_KEY) || "[]");
+      return t.filter(function(x){ return Date.now() - x < RATE_WINDOW; });
+    }catch(err){ return []; }
+  }
+  function noteSend(){
+    try{ var t = recentSends(); t.push(Date.now()); localStorage.setItem(RATE_KEY, JSON.stringify(t)); }catch(err){}
+  }
+  function looksLikeBot(data){
+    if(data.company) return true;                       // hidden honeypot field was filled in
+    if(Date.now() - loadedAt < 3000) return true;       // submitted faster than a person can type
+    if(!humanInput) return true;                        // no tap, click or keypress on the form at all
+    return false;
+  }
+
   form.addEventListener("submit", function(e){
     e.preventDefault();
     status.textContent = "";
@@ -419,6 +442,21 @@ $$(".faq-q").forEach(function(btn){
 
     var data = {};
     fields.forEach(function(i){ if(i.name) data[i.name] = (i.value||"").trim(); });
+
+    if(looksLikeBot(data)){
+      successMsg.textContent = "Thanks, your request is in.";
+      form.classList.add("sent");
+      return;
+    }
+    // Spam usually carries links; customers describing a car or a window don't need them.
+    if(((data.message || "").match(/https?:\/\/|www\./gi) || []).length > 1){
+      status.textContent = "Please remove the links from your message and try again.";
+      return;
+    }
+    if(recentSends().length >= RATE_MAX){
+      status.textContent = "We've already received several requests from you. We'll be in touch soon, or call or text us on (954) 213-7808.";
+      return;
+    }
 
     var btn = $("button[type=submit]", form);
     btn.disabled = true;
@@ -457,6 +495,7 @@ $$(".faq-q").forEach(function(btn){
           if(!r.ok) throw new Error((j.errors && j.errors[0] && j.errors[0].message) || j.error || "bad response");
         });
       }).then(function(){
+        noteSend();
         done("Thanks " + (data.name.split(" ")[0] || "") + ", your request is in. We'll come back to you with a shade recommendation and a price.");
       }).catch(function(err){
         btn.disabled = false;

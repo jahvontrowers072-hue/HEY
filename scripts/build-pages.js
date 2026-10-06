@@ -21,6 +21,10 @@ const IMAGE_SIZES = {
   "w-zr1-doors": [1600, 1200],
   "install": [1212, 952],
   "rr-glass": [1280, 720],
+  "w-malibu": [1600, 1200],
+  "w-gt3": [1600, 900],
+  "w-mustang-front": [1600, 1200],
+  "w-modely-juniper": [1600, 1200],
 };
 
 const BUSINESS = {
@@ -209,6 +213,147 @@ const SERVICES = [
   },
 ];
 
+/* ───────────────────────── city pages ─────────────────────────
+   One page per main city. Each has its own copy and FAQs (no swapped-name templates),
+   and only states what's true of the business: mobile service, Florida tint law, how installs work. */
+
+const SVC_LINKS = `<a href="/automotive-window-tint">car window tinting</a>, <a href="/residential-window-tint">home window film</a> and <a href="/commercial-window-tint">commercial tinting</a>`;
+
+const CITY_PAGES = [
+  {
+    slug: "window-tinting-west-palm-beach",
+    city: "West Palm Beach",
+    county: "Palm Beach County",
+    name: "Window Tinting in West Palm Beach",
+    short: "West Palm Beach",
+    title: "Mobile Window Tinting in West Palm Beach, FL | C&N Spotless",
+    desc: "Mobile window tinting in West Palm Beach for cars, homes and businesses. We come to your driveway, condo or office. Florida-legal shades. (954) 213-7808.",
+    tag: "West Palm Beach · Palm Beach County",
+    h1: ["Window tinting in", "<em>West Palm Beach.</em>"],
+    sub: "Cars, homes and storefronts tinted at your address in West Palm Beach, from downtown and Northwood to the neighborhoods along the Intracoastal.",
+    hero: "w-malibu",
+    heroAlt: "Light blue classic Chevrolet Malibu with dark tinted windows",
+    images: [["w-modely", "White Tesla Model Y in a driveway with the front door open showing tinted glass"], ["w-mustang-glass", "Freshly tinted door glass on a white Ford Mustang"], ["w-c6-rear", "Tinted rear window on a yellow C6 Corvette"]],
+    nearby: ["Riviera Beach", "Lake Worth Beach", "Wellington", "Boynton Beach"],
+    body: `
+      <h2>Mobile window tinting across West Palm Beach.</h2>
+      <p>C&amp;N Spotless brings the film, tools and setup to you anywhere in West Palm Beach. There's no shop to drop the car at and no afternoon lost in a waiting room: we tint your car in your driveway or parking lot, and your home or business where the glass already is. We offer ${SVC_LINKS}.</p>
+      <h3>Cars, trucks and SUVs</h3>
+      <p>Palm Beach sun bakes a parked car fast, and the glare off the water and the Intracoastal doesn't help. Ceramic and carbon films cut the heat you feel through the glass, block nearly all UV, and keep your dash and seats from fading. We'll recommend the darkest shade that stays legal for your vehicle, since Florida sets different limits for cars than for SUVs, trucks and vans.</p>
+      <h3>Homes and condos</h3>
+      <p>West Palm Beach has a lot of condos and HOA communities, and many associations have rules about how tinted windows look from outside. If yours does, check with them first; we can provide film samples and spec sheets for their approval. Residential film cuts heat and glare in sun-facing rooms and protects floors and furniture from UV fading.</p>
+      <h3>Offices and storefronts</h3>
+      <p>For downtown offices and storefronts, we install before you open, after you close or on weekends, so staff and customers aren't disrupted. Film evens out glare on screens, keeps front-of-store displays from fading, and can add daytime privacy to street-facing glass.</p>
+      <h3>Staying legal in Florida</h3>
+      <p>Florida limits front side windows to 28% or lighter, and rear side and back windows to 15% on cars or 6% on SUVs, trucks and vans. The full table is on our <a href="/automotive-window-tint">automotive tint page</a>.</p>`,
+    faqs: [
+      ["Do you come to condos and apartment complexes in West Palm Beach?", "Yes. We tint in parking lots and garages at condos, apartments and offices across West Palm Beach. We just need a reasonably sheltered spot out of the wind and dust, and permission to work there if your building requires it."],
+      ["How long does car window tinting take?", "Most full vehicles take about 2 to 4 hours. Afterwards, keep the windows up for 3 to 5 days while the film cures."],
+      ["Do I need HOA approval for home window film in Palm Beach County?", "Many condo associations and HOAs have rules about the shade or reflectivity of window film. Check with yours before booking; we'll give you samples and spec sheets to submit for approval."],
+    ],
+  },
+  {
+    slug: "window-tinting-boca-raton",
+    city: "Boca Raton",
+    county: "Palm Beach County",
+    name: "Window Tinting in Boca Raton",
+    short: "Boca Raton",
+    title: "Mobile Window Tinting in Boca Raton, FL | C&N Spotless",
+    desc: "Window tinting in Boca Raton at your home, office or gated community. Ceramic and carbon films for cars, homes and businesses. Free quote: (954) 213-7808.",
+    tag: "Boca Raton · Palm Beach County",
+    h1: ["Window tinting in", "<em>Boca Raton.</em>"],
+    sub: "Mobile tinting for cars, homes and offices in Boca Raton, installed in your driveway, garage or office lot, with Florida-legal shades and clean edges.",
+    hero: "w-gt3",
+    heroAlt: "Yellow Porsche 911 GT3 front view with the driver door open",
+    images: [["w-zr1-front", "Orange Corvette ZR1 head-on after a tint install"], ["w-modely-juniper", "White Tesla Model Y with dark tinted glass reflecting palm trees"], ["w-c6-rear", "Tinted rear window on a yellow C6 Corvette"]],
+    nearby: ["Delray Beach", "Deerfield Beach", "Boynton Beach", "Coral Springs"],
+    body: `
+      <h2>Tint installed where your car already is.</h2>
+      <p>Boca Raton drivers don't need to leave the car at a shop for the day. C&amp;N Spotless is fully mobile: we come to your home, your office or your community and do the install on site. We offer ${SVC_LINKS}, all with the same care and clean-up.</p>
+      <h3>Luxury and performance vehicles</h3>
+      <p>We regularly tint high-end and performance cars, so we take the extra care they need: interior panels protected, film cut to the glass, and a careful clean-up afterwards. Ceramic film is the usual pick here because it rejects a lot of heat even in lighter shades and won't fade to purple over time.</p>
+      <h3>Gated communities and HOAs</h3>
+      <p>Many Boca Raton communities are gated or managed by an HOA. Let us know if we'll need a gate pass or approval to work on site. For homes, associations often have rules about how film looks from outside, so check first; we can supply samples and spec sheets.</p>
+      <h3>Home window film</h3>
+      <p>Residential film takes the heat and glare out of sunny rooms and blocks nearly all UV, which helps protect flooring, furniture and art from fading. Darker and reflective films add daytime privacy, though at night with the lights on you'll still want blinds.</p>
+      <h3>Offices and medical suites</h3>
+      <p>For offices, we install around your hours so patients, clients and staff aren't disrupted. Film cuts glare on screens and keeps west-facing rooms cooler through the afternoon.</p>
+      <h3>Florida tint limits</h3>
+      <p>Front side windows must stay at 28% or lighter. Rear side and back windows can go to 15% on cars or 6% on SUVs, trucks and vans. See the full table on our <a href="/automotive-window-tint">automotive tint page</a>.</p>`,
+    faqs: [
+      ["Can you tint my car inside a gated community in Boca Raton?", "Yes. Just let us know ahead of time if we need a gate pass or your community's approval to work on site."],
+      ["Which film is best for a luxury car?", "Most owners choose ceramic film. It rejects much more heat than standard dyed film, stays clear for electronics and GPS, and won't turn purple. We'll show you the manufacturer's specs so you can compare."],
+      ["Do you tint offices in Boca Raton outside business hours?", "Yes. We can work early in the morning, after close or on weekends so your office keeps running normally."],
+    ],
+  },
+  {
+    slug: "window-tinting-fort-lauderdale",
+    city: "Fort Lauderdale",
+    county: "Broward County",
+    name: "Window Tinting in Fort Lauderdale",
+    short: "Fort Lauderdale",
+    title: "Mobile Window Tinting in Fort Lauderdale, FL | C&N Spotless",
+    desc: "Fort Lauderdale mobile window tinting for cars, homes and businesses, installed at your home or office. Florida-legal shades. Call (954) 213-7808.",
+    tag: "Fort Lauderdale · Broward County",
+    h1: ["Window tinting in", "<em>Fort Lauderdale.</em>"],
+    sub: "We tint cars, homes and businesses at your address in Fort Lauderdale, from Las Olas and Victoria Park to Coral Ridge and the canal neighborhoods.",
+    hero: "w-mustang-front",
+    heroAlt: "White Ford Mustang convertible with both doors open and tinted windows",
+    images: [["w-zr1-doors", "Orange Corvette ZR1 with both doors open showing tinted side glass"], ["w-modely", "White Tesla Model Y in a driveway with the front door open showing tinted glass"], ["w-mustang-glass", "Freshly tinted door glass on a white Ford Mustang"]],
+    nearby: ["Wilton Manors", "Oakland Park", "Plantation", "Dania Beach", "Hollywood"],
+    body: `
+      <h2>Fort Lauderdale window tinting, brought to you.</h2>
+      <p>C&amp;N Spotless is based in Broward County and works across Fort Lauderdale. We're a mobile service, so we come to your driveway, office lot or job site with everything we need. We offer ${SVC_LINKS}.</p>
+      <h3>Car tint for Fort Lauderdale heat</h3>
+      <p>Between the sun, the humidity and the glare off the water, cars here heat up quickly. Quality film cuts the heat and glare coming through the glass, blocks nearly all UV and adds privacy on the rear windows. Convertibles, coupes, trucks and SUVs are all fine; we'll match the shade to your vehicle type so it stays legal.</p>
+      <h3>Homes near the water</h3>
+      <p>Waterfront and canal-side homes get a lot of reflected light. Window film cuts that glare and the heat in sun-facing rooms, and protects floors and furniture from fading. If you're in a condo or HOA community, check their rules on how film looks from outside before booking; we'll provide samples for approval.</p>
+      <h3>Businesses and fleets</h3>
+      <p>We tint storefronts and offices around your hours, and we can tint company cars, trucks and vans in your own lot, all kept within Florida's legal limits and matched across the fleet.</p>
+      <h3>Florida tint law in brief</h3>
+      <p>Front side windows: 28% or lighter. Rear side and back windows: 15% for cars, 6% for SUVs, trucks and vans. Windshields can only take a non-reflective strip above the AS-1 line. The full table is on our <a href="/automotive-window-tint">automotive tint page</a>.</p>`,
+    faqs: [
+      ["Are you local to Fort Lauderdale?", "Yes. C&N Spotless is based in Broward County and serves Fort Lauderdale and the surrounding cities as a mobile service, so we come to you."],
+      ["Can you tint a car in a parking garage?", "Yes, a covered garage is actually ideal because it keeps wind and dust off the glass. Just make sure we have permission to work there and room to open the doors."],
+      ["Do you tint company fleets in Fort Lauderdale?", "Yes. We come to your lot and tint cars, trucks and vans to matching, Florida-legal shades."],
+    ],
+  },
+  {
+    slug: "window-tinting-miami",
+    city: "Miami",
+    county: "Miami-Dade County",
+    name: "Window Tinting in Miami",
+    short: "Miami",
+    title: "Mobile Window Tinting in Miami, FL | C&N Spotless",
+    desc: "Mobile window tinting in Miami. We tint cars, condos, homes and storefronts at your address, including high-rise garages. Free quote: (954) 213-7808.",
+    tag: "Miami · Miami-Dade County",
+    h1: ["Window tinting in", "<em>Miami.</em>"],
+    sub: "Car, home and commercial window tinting at your address in Miami, from Brickell and Downtown to Coconut Grove, Little Havana and Kendall.",
+    hero: "w-modely-juniper",
+    heroAlt: "White Tesla Model Y with dark tinted windshield and side glass reflecting palm trees",
+    images: [["w-gt3-doors", "Yellow Porsche 911 GT3 with doors open after a window tint install"], ["w-malibu", "Classic Chevrolet Malibu with dark tinted windows"], ["w-zr1-front", "Orange Corvette ZR1 head-on after a tint install"]],
+    nearby: ["Miami Beach", "Coral Gables", "Doral", "Hialeah", "Key Biscayne"],
+    body: `
+      <h2>Miami window tinting without the shop visit.</h2>
+      <p>Getting to a tint shop in Miami traffic can eat half a day. C&amp;N Spotless comes to you instead: your building's garage, your driveway or your office lot. We offer ${SVC_LINKS} across Miami and the rest of Miami-Dade.</p>
+      <h3>High-rise and condo garages</h3>
+      <p>A covered parking garage is one of the best places to tint a car, since it keeps wind and dust off the glass. If you live or work in a high-rise, we can usually do the install right in your space. Check that your building allows contractors to work in the garage, and let us know about any access or parking passes.</p>
+      <h3>Heat, glare and privacy for your car</h3>
+      <p>Miami sun is strong year-round. Ceramic and carbon films reject far more infrared heat than standard dyed films, block nearly all UV, and add privacy on the rear windows. We'll recommend the darkest shade that keeps your vehicle legal under Florida law.</p>
+      <h3>Condos and homes</h3>
+      <p>Floor-to-ceiling glass lets in a lot of heat and glare. Residential film cuts both and protects floors and furniture from fading. Most condo associations have rules about how film looks from outside, so check with yours first; we'll provide samples and spec sheets for approval.</p>
+      <h3>Storefronts and offices</h3>
+      <p>For shops and offices, we work around your hours, before opening, after close or on weekends, so business carries on as normal.</p>
+      <h3>Florida tint limits</h3>
+      <p>Front side windows must let in at least 28% of light. Rear side and back windows can go to 15% on cars or 6% on SUVs, trucks and vans. See the full table on our <a href="/automotive-window-tint">automotive tint page</a>.</p>`,
+    faqs: [
+      ["Can you tint my car in my building's parking garage in Miami?", "Usually, yes. A covered garage is ideal for a clean install. Check that your building allows contractors to work there, and tell us about any access or parking passes we'll need."],
+      ["Do you serve all of Miami-Dade?", "Yes. We cover Miami and the rest of Miami-Dade, including Miami Beach, Coral Gables, Doral, Hialeah, Kendall and Key Biscayne."],
+      ["Can you tint floor-to-ceiling condo windows?", "Yes. We'll measure the glass and recommend a film that cuts heat and glare. Many condo associations have rules about how film looks from outside, so check with yours first and we'll provide samples for approval."],
+    ],
+  },
+];
+
 /* ───────────────────────── helpers ───────────────────────── */
 
 const esc = (s) => String(s).replace(/&(?!amp;|lt;|gt;|quot;|#)/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -338,12 +483,15 @@ function servicePage(s) {
   const service = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: `${s.name} in ${BUSINESS.region}`,
-    serviceType: s.name,
+    name: s.city ? `Mobile Window Tinting in ${s.city}, FL` : `${s.name} in ${BUSINESS.region}`,
+    serviceType: s.city ? "Window Tinting" : s.name,
     url,
     description: s.desc,
     provider: { "@id": businessId, "@type": BUSINESS_TYPES, name: BUSINESS.name, telephone: BUSINESS.phone, url: `${SITE}/` },
-    areaServed: businessSchema.areaServed,
+    // City pages name their own city (inside its county); service pages cover the whole region.
+    areaServed: s.city
+      ? [{ "@type": "City", name: `${s.city}, ${BUSINESS.state}`, containedInPlace: { "@type": "AdministrativeArea", name: `${s.county}, ${BUSINESS.state}` } }]
+      : businessSchema.areaServed,
   };
 
   return `<!doctype html>
@@ -357,7 +505,7 @@ function servicePage(s) {
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#08080A">
 <meta name="geo.region" content="US-FL">
-<meta name="geo.placename" content="${BUSINESS.region}, Florida">
+<meta name="geo.placename" content="${s.city || BUSINESS.region}, Florida">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="${esc(BUSINESS.name)}">
@@ -416,10 +564,10 @@ ${chrome}<main id="main">
   <div class="wrap faq-layout">
     <div class="rv">
       <span class="eyebrow">FAQ</span>
-      <h2>${esc(s.short)} questions.</h2>
+      <h2>${s.city ? `${esc(s.city)} tinting questions.` : `${esc(s.short)} questions.`}</h2>
       <div class="faq-aside" style="margin-top:34px">
         <h3>Want a price?</h3>
-        <p>Tell us what needs tinting and where you are in ${BUSINESS.region}. We'll come back with a recommendation and a quote.</p>
+        <p>Tell us what needs tinting and where you are in ${s.city || BUSINESS.region}. We'll come back with a recommendation and a quote.</p>
         <a class="btn btn-red btn-sm" href="/#quote" style="width:100%">Get a Free Quote</a>
       </div>
     </div>
@@ -436,11 +584,17 @@ ${s.faqs.map(([q, a]) => `      <div class="faq-item">
   <div class="wrap">
     <div class="sect-head rv">
       <span class="eyebrow">Service Area</span>
-      <h2>Mobile ${esc(s.name.toLowerCase())} across ${BUSINESS.region}.</h2>
-      <p class="lede">We come to you in ${BUSINESS.cities.slice(0, -1).join(", ")} and ${BUSINESS.cities.at(-1)}.</p>
+${s.city
+      ? `      <h2>Serving ${esc(s.city)} and nearby.</h2>
+      <p class="lede">We also come to ${s.nearby.join(", ")} and everywhere else in ${BUSINESS.areaText}.</p>`
+      : `      <h2>Mobile ${esc(s.name.toLowerCase())} across ${BUSINESS.region}.</h2>
+      <p class="lede">We come to you in ${BUSINESS.cities.slice(0, -1).join(", ")} and ${BUSINESS.cities.at(-1)}.</p>`}
     </div>
     <nav class="related rv" aria-label="Our services">
 ${SERVICES.map((o) => `      <a href="/${o.slug}"${o.slug === s.slug ? ' aria-current="page"' : ""}><b>${esc(o.short)}</b><span>${esc(o.blurb)}</span></a>`).join("\n")}
+    </nav>
+    <nav class="related cities rv" aria-label="Cities we serve">
+${CITY_PAGES.map((c) => `      <a href="/${c.slug}"${c.slug === s.slug ? ' aria-current="page"' : ""}><b>${esc(c.city)}</b><span>${esc(c.county)}</span></a>`).join("\n")}
     </nav>
   </div>
 </section>
@@ -449,7 +603,7 @@ ${SERVICES.map((o) => `      <a href="/${o.slug}"${o.slug === s.slug ? ' aria-cu
   <div class="fcta-bg"><img src="/assets/cabin-pov.jpg" alt="" loading="lazy" width="1500" height="1125"></div>
   <div class="wrap rv">
     <span class="eyebrow" style="justify-content:center">Ready When You Are</span>
-    <h2>Get a free ${esc(s.short.toLowerCase())} quote.</h2>
+    <h2>${s.city ? `Get a free window tint quote in ${esc(s.city)}.` : `Get a free ${esc(s.short.toLowerCase())} quote.`}</h2>
     <p>Tell us what needs tinting and where you are. We'll bring the shop to you.</p>
     <div class="fcta-btns">
       <a class="btn btn-red" href="/#quote">Get a Free Quote</a>
@@ -465,7 +619,7 @@ ${tail}<script src="/assets/site.js" defer></script>
 `;
 }
 
-for (const s of SERVICES) fs.writeFileSync(path.join(ROOT, `${s.slug}.html`), stamp(servicePage(s)));
+for (const s of [...SERVICES, ...CITY_PAGES]) fs.writeFileSync(path.join(ROOT, `${s.slug}.html`), stamp(servicePage(s)));
 
 // 404 page — same look, points people back to something useful. Not in the sitemap.
 fs.writeFileSync(path.join(ROOT, "404.html"), stamp(`<!doctype html>
@@ -502,7 +656,7 @@ ${tail}<script src="/assets/site.js" defer></script>
 /* ───────────────────────── sitemap + robots ───────────────────────── */
 
 const today = new Date().toISOString().slice(0, 10);
-const urls = [{ loc: `${SITE}/`, pri: "1.0" }, ...SERVICES.map((s) => ({ loc: `${SITE}/${s.slug}`, pri: "0.8" }))];
+const urls = [{ loc: `${SITE}/`, pri: "1.0" }, ...SERVICES.map((s) => ({ loc: `${SITE}/${s.slug}`, pri: "0.8" })), ...CITY_PAGES.map((c) => ({ loc: `${SITE}/${c.slug}`, pri: "0.7" }))];
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map((u) => `  <url><loc>${u.loc}</loc><lastmod>${today}</lastmod><priority>${u.pri}</priority></url>`).join("\n")}
@@ -514,4 +668,4 @@ Allow: /
 Sitemap: ${SITE}/sitemap.xml
 `);
 
-console.log(`SEO build: index schema (${homeFaqs.length} FAQs) + ${SERVICES.length} service pages + sitemap.xml + robots.txt`);
+console.log(`SEO build: index schema (${homeFaqs.length} FAQs) + ${SERVICES.length} service pages + ${CITY_PAGES.length} city pages + sitemap.xml + robots.txt`);
