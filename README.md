@@ -1,6 +1,6 @@
 # C&N Spotless — Website
 
-Mobile window tinting across Broward County, FL — (954) 213-7808 · clayontrowers6@gmail.com
+Mobile window tinting across Miami-Dade, Broward & Palm Beach, FL — (954) 213-7808 · clayontrowers6@gmail.com
 
 The public site: homepage, car / home / business tint pages, gallery, quote form, animations and all the SEO. Visitor tracking and the quote form send to your **backend** (the other download).
 
@@ -21,7 +21,7 @@ Until this is set, the site works but nothing is tracked, and the quote form ope
 
 ## 3. Get found on Google
 - Submit `https://cnmobiletinting.shopzencho.com/sitemap.xml` in Google Search Console (https://search.google.com/search-console).
-- Set up your **Google Business Profile** (https://business.google.com) as a service-area business covering Broward County, category "Window tinting service". This matters more than anything on the site.
+- Set up your **Google Business Profile** (https://business.google.com) as a service-area business covering Miami-Dade, Broward and Palm Beach counties, category "Window tinting service". This matters more than anything on the site.
 - Ask every customer for a Google review.
 
 ## Editing the site

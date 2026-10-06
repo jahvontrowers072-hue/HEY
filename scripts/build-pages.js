@@ -28,15 +28,43 @@ const BUSINESS = {
   phone: "+1-954-213-7808",
   phoneDisplay: "(954) 213-7808",
   email: "clayontrowers6@gmail.com",
-  county: "Broward County",
+  region: "South Florida",
+  counties: ["Miami-Dade County", "Broward County", "Palm Beach County"],
+  areaText: "Miami-Dade, Broward and Palm Beach counties",
   // Service-area business: customers are served at their own address, so no street
   // address is published here or on the site. The service area is described below.
   state: "FL",
   cities: [
-    "Fort Lauderdale", "Plantation", "Davie", "Sunrise", "Weston", "Pembroke Pines", "Miramar", "Hollywood",
-    "Coral Springs", "Pompano Beach", "Coconut Creek", "Tamarac", "Margate", "Lauderhill", "Cooper City",
-    "Parkland", "Deerfield Beach", "Oakland Park", "Wilton Manors", "Lauderdale Lakes", "Dania Beach",
-    "Hallandale Beach", "Lighthouse Point", "North Lauderdale", "Southwest Ranches",
+    "West Palm Beach",
+    "Riviera Beach",
+    "Wellington",
+    "Lake Worth Beach",
+    "Boynton Beach",
+    "Delray Beach",
+    "Boca Raton",
+    "Deerfield Beach",
+    "Pompano Beach",
+    "Coral Springs",
+    "Fort Lauderdale",
+    "Lauderdale Lakes",
+    "Plantation",
+    "Sunrise",
+    "Davie",
+    "Weston",
+    "Dania Beach",
+    "Hollywood",
+    "Pembroke Pines",
+    "Miramar",
+    "Hallandale Beach",
+    "Aventura",
+    "North Miami",
+    "Miami Beach",
+    "Hialeah",
+    "Doral",
+    "Miami",
+    "Coral Gables",
+    "Key Biscayne",
+    "Kendall",
   ],
   // Add your real profile links here — they help Google connect the site to your business.
   sameAs: [
@@ -69,11 +97,11 @@ const SERVICES = [
     name: "Automotive Window Tinting",
     short: "Automotive Tint",
     blurb: "Cars, trucks & SUVs",
-    title: "Car Window Tinting in Broward County, FL | C&N Spotless",
-    desc: "Mobile car, truck & SUV window tinting in your driveway: Fort Lauderdale, Plantation, Davie, Weston & all of Broward. Florida-legal shades. (954) 213-7808.",
-    tag: "Automotive · Broward County, FL",
+    title: "Car Window Tinting in South Florida | C&N Spotless",
+    desc: "Mobile car, truck & SUV window tinting in your driveway across Miami-Dade, Broward & Palm Beach. Florida-legal shades. (954) 213-7808.",
+    tag: "Automotive · South Florida",
     h1: ["Car window tinting,", "<em>done in your driveway.</em>"],
-    sub: "Cars, trucks and SUVs tinted at your home or office anywhere in Broward County. Florida-legal shades, clean edges, and no day lost at a shop.",
+    sub: "Cars, trucks and SUVs tinted at your home or office anywhere in Miami-Dade, Broward or Palm Beach. Florida-legal shades, clean edges, and no day lost at a shop.",
     hero: "w-zr1-doors",
     heroAlt: "Orange Corvette ZR1 with both doors open showing tinted side glass",
     images: [["w-gt3-doors", "Yellow Porsche 911 GT3 with doors open after a window tint install"], ["w-c6-rear", "Tinted rear window on a yellow C6 Corvette"], ["w-mustang-glass", "Freshly tinted door glass on a white Ford Mustang"]],
@@ -101,8 +129,8 @@ const SERVICES = [
       <h3>How a mobile install works</h3>
       <p>Most full vehicles take about 2 to 4 hours. We need a reasonably sheltered spot: a garage, carport or shaded driveway is ideal, since wind and dust are the enemy of a clean install. Afterwards, leave the windows up for 3 to 5 days while the film cures; a little haze or a few small water pockets during that time is normal and clears on its own.</p>`,
     faqs: [
-      ["How much does car window tinting cost in Broward County?", "It depends on the vehicle, how many windows, the film you choose and whether old tint needs removing. Send us the year, make and model and we'll give you an exact price before anything is booked."],
-      ["Can you tint my car at my apartment or office?", "Yes, that's how we work. We come to your home, apartment complex, office or job site anywhere in Broward County. We just need a spot that's reasonably out of the wind and dust."],
+      ["How much does car window tinting cost in South Florida?", "It depends on the vehicle, how many windows, the film you choose and whether old tint needs removing. Send us the year, make and model and we'll give you an exact price before anything is booked."],
+      ["Can you tint my car at my apartment or office?", "Yes, that's how we work. We come to your home, apartment complex, office or job site anywhere in Miami-Dade, Broward or Palm Beach. We just need a spot that's reasonably out of the wind and dust."],
       ["Can I roll my windows down after tinting?", "Wait 3 to 5 days. The film needs that time to cure and bond to the glass; rolling the window down early can catch the bottom edge and lift it."],
     ],
   },
@@ -111,11 +139,11 @@ const SERVICES = [
     name: "Residential Window Tinting",
     short: "Residential Tint",
     blurb: "Homes & condos",
-    title: "Home Window Tinting in Broward County, FL | C&N Spotless",
-    desc: "Residential window film in Broward County. Cut heat, glare & UV fading in Fort Lauderdale, Weston, Coral Springs & more. We come to you: (954) 213-7808.",
-    tag: "Residential · Broward County, FL",
+    title: "Home Window Tinting in South Florida | C&N Spotless",
+    desc: "Residential window film in Miami-Dade, Broward & Palm Beach. Cut heat, glare & UV fading from Miami to West Palm. We come to you: (954) 213-7808.",
+    tag: "Residential · South Florida",
     h1: ["Home window film", "<em>for the Florida sun.</em>"],
-    sub: "Take the heat and glare out of hot rooms, protect floors and furniture from fading, and add daytime privacy, installed at your home anywhere in Broward County.",
+    sub: "Take the heat and glare out of hot rooms, protect floors and furniture from fading, and add daytime privacy, installed at your home anywhere in Miami-Dade, Broward or Palm Beach.",
     hero: "install",
     heroAlt: "Window film being squeegeed onto glass during an installation",
     images: [["install", "Window film being installed on glass with a squeegee"], ["w-mustang-glass", "Tinted glass reflecting palm trees"], ["rr-glass", "Tinted glass reflecting the sky and trees"]],
@@ -135,7 +163,7 @@ const SERVICES = [
       <h3 id="daytime-privacy">Daytime privacy</h3>
       <p>Darker and reflective films make it hard to see in during the day while you can still see out. At night, with lights on inside, that reverses, so rooms that need privacy after dark still need blinds or curtains. We'll help you choose a film that fits how you use each room. Tinting a vehicle for privacy instead? See <a href="/automotive-window-tint#privacy-tint">automotive privacy tint</a>.</p>
       <h3>Condos and HOAs</h3>
-      <p>Many Broward condo associations and HOAs have rules about how tinted windows look from outside, usually the shade or how reflective it is. If you're in one, check with your association first; we're happy to provide film samples and spec sheets for their approval.</p>
+      <p>Many South Florida condo associations and HOAs have rules about how tinted windows look from outside, usually the shade or how reflective it is. If you're in one, check with your association first; we're happy to provide film samples and spec sheets for their approval.</p>
       <h3>How it works</h3>
       <p>Tell us roughly how many windows and their sizes (photos help) and we'll quote it. On install day we clean the glass, fit the film to each pane and clean up after ourselves. Film can look slightly hazy for a few days while it cures. That's normal and clears on its own.</p>`,
     faqs: [
@@ -149,11 +177,11 @@ const SERVICES = [
     name: "Commercial Window Tinting",
     short: "Commercial Tint",
     blurb: "Offices, storefronts & fleets",
-    title: "Commercial Window Tinting in Broward County | C&N Spotless",
-    desc: "Office, storefront & fleet window tinting across Broward County, FL, installed around your business hours. Free quote: (954) 213-7808.",
-    tag: "Commercial · Broward County, FL",
+    title: "Commercial Window Tinting in South Florida | C&N Spotless",
+    desc: "Office, storefront & fleet window tinting across Miami-Dade, Broward & Palm Beach, installed around your business hours. Free quote: (954) 213-7808.",
+    tag: "Commercial · South Florida",
     h1: ["Commercial window tint,", "<em>on your schedule.</em>"],
-    sub: "Offices, storefronts and fleet vehicles across Broward County, installed around your hours so the work never shuts you down.",
+    sub: "Offices, storefronts and fleet vehicles across Miami-Dade, Broward and Palm Beach, installed around your hours so the work never shuts you down.",
     hero: "rr-glass",
     heroAlt: "Tinted side glass on a luxury coupe reflecting palm trees",
     images: [["w-modely", "White Tesla Model Y with tinted windows"], ["rr-glass", "Tinted side glass reflecting palm trees"], ["install", "Window film installation in progress"]],
@@ -212,7 +240,7 @@ const businessSchema = {
   "@id": businessId,
   name: BUSINESS.name,
   alternateName: "C&N Spotless Mobile Window Tinting",
-  description: `Mobile window tinting for cars, homes and businesses across ${BUSINESS.county}, Florida. We install at your home, office or job site.`,
+  description: `Mobile window tinting for cars, homes and businesses across ${BUSINESS.areaText}, Florida. We install at your home, office or job site.`,
   url: `${SITE}/`,
   telephone: BUSINESS.phone,
   email: BUSINESS.email,
@@ -222,11 +250,11 @@ const businessSchema = {
   // Region only: a mobile, service-area business with no customer-facing premises.
   address: { "@type": "PostalAddress", addressRegion: BUSINESS.state, addressCountry: "US" },
   areaServed: [
-    {
+    ...BUSINESS.counties.map((c) => ({
       "@type": "AdministrativeArea",
-      name: `${BUSINESS.county}, ${BUSINESS.state}`,
+      name: `${c}, ${BUSINESS.state}`,
       containedInPlace: { "@type": "State", name: "Florida" },
-    },
+    })),
     ...BUSINESS.cities.map((c) => ({ "@type": "City", name: `${c}, ${BUSINESS.state}` })),
   ],
   openingHoursSpecification: [{
@@ -310,7 +338,7 @@ function servicePage(s) {
   const service = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: `${s.name} in ${BUSINESS.county}, FL`,
+    name: `${s.name} in ${BUSINESS.region}`,
     serviceType: s.name,
     url,
     description: s.desc,
@@ -329,7 +357,7 @@ function servicePage(s) {
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#08080A">
 <meta name="geo.region" content="US-FL">
-<meta name="geo.placename" content="${BUSINESS.county}, Florida">
+<meta name="geo.placename" content="${BUSINESS.region}, Florida">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="${esc(BUSINESS.name)}">
@@ -391,7 +419,7 @@ ${chrome}<main id="main">
       <h2>${esc(s.short)} questions.</h2>
       <div class="faq-aside" style="margin-top:34px">
         <h3>Want a price?</h3>
-        <p>Tell us what needs tinting and where you are in ${BUSINESS.county}. We'll come back with a recommendation and a quote.</p>
+        <p>Tell us what needs tinting and where you are in ${BUSINESS.region}. We'll come back with a recommendation and a quote.</p>
         <a class="btn btn-red btn-sm" href="/#quote" style="width:100%">Get a Free Quote</a>
       </div>
     </div>
@@ -408,7 +436,7 @@ ${s.faqs.map(([q, a]) => `      <div class="faq-item">
   <div class="wrap">
     <div class="sect-head rv">
       <span class="eyebrow">Service Area</span>
-      <h2>Mobile ${esc(s.name.toLowerCase())} across ${BUSINESS.county}.</h2>
+      <h2>Mobile ${esc(s.name.toLowerCase())} across ${BUSINESS.region}.</h2>
       <p class="lede">We come to you in ${BUSINESS.cities.slice(0, -1).join(", ")} and ${BUSINESS.cities.at(-1)}.</p>
     </div>
     <nav class="related rv" aria-label="Our services">
