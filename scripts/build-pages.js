@@ -25,6 +25,10 @@ const IMAGE_SIZES = {
   "w-gt3": [1600, 900],
   "w-mustang-front": [1600, 1200],
   "w-modely-juniper": [1600, 1200],
+  "w-zr1-front": [1600, 1200],
+  "w-modely": [1600, 1200],
+  "w-c6-rear": [1600, 1200],
+  "w-gt3-doors": [1600, 1200],
 };
 
 const BUSINESS = {
@@ -352,6 +356,174 @@ const CITY_PAGES = [
       ["Can you tint floor-to-ceiling condo windows?", "Yes. We'll measure the glass and recommend a film that cuts heat and glare. Many condo associations have rules about how film looks from outside, so check with yours first and we'll provide samples for approval."],
     ],
   },
+  {
+    slug: "window-tinting-lauderdale-lakes",
+    city: "Lauderdale Lakes",
+    county: "Broward County",
+    name: "Window Tinting in Lauderdale Lakes",
+    short: "Lauderdale Lakes",
+    title: "Mobile Window Tinting in Lauderdale Lakes, FL | C&N Spotless",
+    desc: "Mobile window tinting from our home base in Lauderdale Lakes. Cars, homes and businesses tinted at your address in central Broward. Call (954) 213-7808.",
+    tag: "Lauderdale Lakes · Broward County",
+    h1: ["Mobile window tinting in", "<em>Lauderdale Lakes, FL.</em>"],
+    sub: "C&N Spotless is based in Lauderdale Lakes, so tinting your car, home or business here is as local as it gets. We come to your driveway, parking lot or office.",
+    hero: "w-zr1-front",
+    heroAlt: "Orange Corvette ZR1 head-on after a window tint install",
+    images: [["w-modely", "White Tesla Model Y in a driveway with the front door open showing tinted glass"], ["w-mustang-glass", "Freshly tinted door glass on a white Ford Mustang"], ["w-c6-rear", "Tinted rear window on a yellow C6 Corvette"]],
+    nearby: ["Lauderhill", "Fort Lauderdale", "Oakland Park", "Tamarac", "Sunrise", "Plantation"],
+    body: `
+      <h2>Your local mobile tint crew.</h2>
+      <p>C&amp;N Spotless works out of Lauderdale Lakes, right in the middle of Broward County. Whether you live off State Road 7, near Oakland Park Boulevard or anywhere else in the city, we bring the film, tools and setup to you and tint your vehicle, home or business on site. There's no shop to drive to and no day spent waiting for your car.</p>
+      <h3>Apartments, condos and shared parking</h3>
+      <p>If you live in an apartment or condo community, we can usually tint your car right in your parking space, ideally a covered one. Check that your property allows contractors to work on site, and tell us about any gate code or visitor parking rules when you book so we can get straight to work.</p>
+      <h3>Daily drivers and work vehicles</h3>
+      <p>Most cars we tint are the ones people drive every day, and the goal is simple: a cooler cabin, less glare and seats and dash that don't fade. If you carry tools or equipment, darker rear glass keeps them out of plain view. Florida allows rear windows down to 15% on cars and 6% on SUVs, trucks and vans, with the front side windows at 28% or lighter.</p>
+      <h3>Homes and small businesses</h3>
+      <p>For homes, residential film takes the heat and glare out of sun-facing rooms and helps protect floors and furniture from fading. For shops and offices, we can install before you open or after you close so customers aren't disrupted.</p>`,
+    faqs: [
+      ["Where is C&N Spotless based?", "We're based in Lauderdale Lakes and work across Broward County, plus Miami-Dade and Palm Beach. We're a mobile service, so there's no shop to visit; we come to your home, office or job site."],
+      ["Can you tint my car at my apartment complex?", "Usually, yes. We need a reasonably sheltered spot out of the wind and dust and permission to work on the property. Let us know about gate codes or visitor parking when you book."],
+      ["How do I book a time?", "Send your vehicle or windows and your preferred date through the quote form, or call or text (954) 213-7808. We'll confirm the closest available time and a price before anything is booked."],
+    ],
+  },
+  {
+    slug: "window-tinting-pompano-beach",
+    city: "Pompano Beach",
+    county: "Broward County",
+    name: "Window Tinting in Pompano Beach",
+    short: "Pompano Beach",
+    title: "Mobile Window Tinting in Pompano Beach, FL | C&N Spotless",
+    desc: "Window tinting in Pompano Beach at your home, condo or business. Glare and heat control for coastal homes, plus car and fleet tint. (954) 213-7808.",
+    tag: "Pompano Beach · Broward County",
+    h1: ["Mobile window tinting in", "<em>Pompano Beach, FL.</em>"],
+    sub: "Car, home and commercial window film installed at your address in Pompano Beach, from the beachside condos along A1A to the neighborhoods west of I-95.",
+    hero: "w-modely",
+    heroAlt: "White Tesla Model Y in a driveway with the front door open showing tinted glass",
+    images: [["w-modely-juniper", "White Tesla Model Y with dark tinted glass reflecting palm trees"], ["w-gt3-doors", "Yellow Porsche 911 GT3 with doors open after a window tint install"], ["w-mustang-glass", "Freshly tinted door glass on a white Ford Mustang"]],
+    nearby: ["Deerfield Beach", "Lighthouse Point", "Coconut Creek", "Margate", "Fort Lauderdale"],
+    body: `
+      <h2>Coastal window tinting, brought to your door.</h2>
+      <p>Pompano Beach gets strong sun and a lot of reflected glare off the ocean, the Intracoastal and the canals. C&amp;N Spotless is a mobile service, so we come to your condo, home or business with everything we need and install the film right where the glass is.</p>
+      <h3>Beachside condos</h3>
+      <p>Oceanfront and Intracoastal condos tend to have large sliding doors and wide windows facing the water, which let in a lot of heat and glare in the afternoon. Window film cuts both and helps protect floors and furniture from fading. Most condo associations have rules about how film looks from outside, so check with yours first; we'll provide samples and spec sheets for approval.</p>
+      <h3>Canal and waterfront homes</h3>
+      <p>Water reflects sunlight back up into the house, so rooms facing a canal can be bright and hot even with blinds closed. A heat-rejecting film lets you keep the view while cutting the glare that bounces off the water.</p>
+      <h3>Cars, trucks and work fleets</h3>
+      <p>We tint daily drivers in your driveway or building garage, and we can tint work trucks and vans at your business lot so every vehicle in the fleet matches and stays within Florida's legal limits.</p>`,
+    faqs: [
+      ["Does salt air affect window film?", "Window film is applied to the inside of the glass, so it isn't exposed to salt spray. Clean it with soft cloths and ammonia-free products, and it will hold up near the beach just like it does inland."],
+      ["Can you tint oceanfront condo windows?", "Yes. We'll recommend a film that cuts heat and glare while keeping the view. Check your association's rules on how film looks from outside first; we can supply samples and spec sheets for their approval."],
+      ["Do you tint work trucks and vans in Pompano Beach?", "Yes. We come to your lot and tint fleet vehicles to matching, Florida-legal shades, working around your schedule."],
+    ],
+  },
+  {
+    slug: "window-tinting-coral-springs",
+    city: "Coral Springs",
+    county: "Broward County",
+    name: "Window Tinting in Coral Springs",
+    short: "Coral Springs",
+    title: "Mobile Window Tinting in Coral Springs, FL | C&N Spotless",
+    desc: "Mobile window tinting in Coral Springs for family SUVs, homes and offices. HOA-friendly film options and Florida-legal shades. Call (954) 213-7808.",
+    tag: "Coral Springs · Broward County",
+    h1: ["Mobile window tinting in", "<em>Coral Springs, FL.</em>"],
+    sub: "We tint cars, homes and offices at your address in Coral Springs, with film choices that suit HOA rules and shades that keep your vehicle legal.",
+    hero: "w-gt3-doors",
+    heroAlt: "Yellow Porsche 911 GT3 with both doors open after a window tint install",
+    images: [["w-modely", "White Tesla Model Y in a driveway with the front door open showing tinted glass"], ["w-zr1-front", "Orange Corvette ZR1 head-on after a tint install"], ["w-c6-rear", "Tinted rear window on a yellow C6 Corvette"]],
+    nearby: ["Parkland", "Coconut Creek", "Tamarac", "Margate", "Pompano Beach"],
+    body: `
+      <h2>Window tinting that fits Coral Springs.</h2>
+      <p>Coral Springs is a planned city in northwest Broward with a lot of HOA communities, family vehicles and home offices. C&amp;N Spotless comes to your driveway or garage, so getting the car or the house tinted doesn't mean losing half a day at a shop.</p>
+      <h3>SUVs, minivans and the school run</h3>
+      <p>Back seats in an SUV or minivan sit in direct sun, and that's often where the kids are. Window film blocks nearly all UV and cuts the heat coming through the glass. Florida treats SUVs, trucks and vans differently from cars: the rear side and back windows can go down to 6%, while the front side windows stay at 28% or lighter. Ceramic film is a good fit if you want strong heat rejection without going very dark.</p>
+      <h3>HOA communities</h3>
+      <p>Many Coral Springs neighborhoods have an HOA with rules about how home window film looks from outside, usually the shade or how reflective it is. Check with yours before booking; we'll give you samples and spec sheets to submit for approval.</p>
+      <h3>Home offices and sunrooms</h3>
+      <p>If you work from home, screen glare from a sunny window gets old fast. Film takes the edge off the glare and the heat in sunrooms and west-facing rooms while still letting in daylight.</p>
+      <h3>Offices and practices</h3>
+      <p>For offices and medical practices, we install outside your hours so patients and staff aren't disrupted.</p>`,
+    faqs: [
+      ["How dark can I tint my SUV or minivan in Florida?", "The front side windows must let in at least 28% of light. On SUVs, trucks and vans, the rear side windows and back glass can go as dark as 6%. We'll recommend the darkest shade that stays legal for your vehicle."],
+      ["Will my HOA let me tint my home windows?", "Most HOAs allow window film but may set rules on shade or reflectivity. Check with yours first; we'll provide samples and spec sheets so they can approve the exact film."],
+      ["Does window tint block UV for passengers in the back seat?", "Yes. Quality window film blocks nearly all UV light coming through the glass it's applied to, which helps protect passengers and keeps upholstery from fading."],
+    ],
+  },
+  {
+    slug: "window-tinting-pembroke-pines",
+    city: "Pembroke Pines",
+    county: "Broward County",
+    name: "Window Tinting in Pembroke Pines",
+    short: "Pembroke Pines",
+    title: "Mobile Window Tinting in Pembroke Pines, FL | C&N Spotless",
+    desc: "Window tinting in Pembroke Pines at your home or office. Cut commute glare and heat with ceramic film. Mobile service across southwest Broward.",
+    tag: "Pembroke Pines · Broward County",
+    h1: ["Mobile window tinting in", "<em>Pembroke Pines, FL.</em>"],
+    sub: "Mobile car, home and office tinting in Pembroke Pines, from the gated communities in the west to the neighborhoods off Pines Boulevard.",
+    hero: "w-c6-rear",
+    heroAlt: "Yellow C6 Corvette from behind showing a tinted rear window",
+    images: [["w-zr1-doors", "Orange Corvette ZR1 with both doors open showing tinted side glass"], ["w-modely-juniper", "White Tesla Model Y with dark tinted glass reflecting palm trees"], ["w-mustang-glass", "Freshly tinted door glass on a white Ford Mustang"]],
+    nearby: ["Miramar", "Weston", "Davie", "Hollywood", "Cooper City", "Southwest Ranches"],
+    body: `
+      <h2>Tinting for one of Broward's biggest suburbs.</h2>
+      <p>Pembroke Pines is one of the largest cities in Broward County, with a lot of commuters, family homes and gated communities. C&amp;N Spotless comes to your home or workplace and does the install there, so you don't have to give up a day to a tint shop.</p>
+      <h3>Commuter cars</h3>
+      <p>If you spend time on I-75 or the main east-west roads every day, you know how much sun comes through the side windows on the drive in and the drive home. Ceramic and carbon films cut that heat and glare, block nearly all UV, and won't fade to purple. A windshield strip above the AS-1 line helps with low morning and evening sun.</p>
+      <h3>Gated communities and HOAs</h3>
+      <p>Many Pembroke Pines communities are gated or run by an HOA. Let us know if we'll need a gate pass, and check your association's rules on home window film before booking; we'll provide samples for approval.</p>
+      <h3>Family homes</h3>
+      <p>Residential film takes the heat out of west-facing rooms and helps protect floors and furniture from UV fading. We can quote room by room, so you only tint the windows that need it.</p>
+      <h3>Offices and clinics</h3>
+      <p>For offices, clinics and storefronts along the main corridors, we install outside business hours so your day isn't interrupted.</p>`,
+    faqs: [
+      ["Will window tint help with glare on my commute?", "Yes. Side window film and a windshield strip above the AS-1 line both cut glare from low sun. Ceramic film also rejects a lot of heat, so the cabin stays cooler on long drives."],
+      ["Can you tint my car inside a gated community?", "Yes. Let us know ahead of time if we need a gate pass or approval to work on site, and we'll come to your driveway or garage."],
+      ["What's the difference between ceramic and carbon film?", "Both reject far more heat than standard dyed film and don't fade to purple. Ceramic usually rejects the most heat for a given shade and doesn't interfere with phone or GPS signals. We'll show you the specs so you can compare."],
+    ],
+  },
+  {
+    slug: "window-tinting-davie",
+    city: "Davie",
+    county: "Broward County",
+    name: "Window Tinting in Davie",
+    short: "Davie",
+    title: "Mobile Window Tinting in Davie, FL | C&N Spotless",
+    desc: "Mobile window tinting in Davie for trucks, SUVs, homes and businesses. We come to your property anywhere in Davie. Free quote: (954) 213-7808.",
+    tag: "Davie · Broward County",
+    h1: ["Mobile window tinting in", "<em>Davie, FL.</em>"],
+    sub: "Trucks, SUVs, homes and businesses tinted on site in Davie, from the larger properties out west to the neighborhoods near the college campuses.",
+    hero: "w-zr1-doors",
+    heroAlt: "Orange Corvette ZR1 with both doors open showing tinted side glass",
+    images: [["w-gt3-doors", "Yellow Porsche 911 GT3 with doors open after a window tint install"], ["w-modely", "White Tesla Model Y in a driveway with the front door open showing tinted glass"], ["w-c6-rear", "Tinted rear window on a yellow C6 Corvette"]],
+    nearby: ["Plantation", "Cooper City", "Southwest Ranches", "Weston", "Fort Lauderdale", "Pembroke Pines"],
+    body: `
+      <h2>Window tinting across Davie.</h2>
+      <p>Davie has a mix you don't find everywhere in Broward: larger lots and equestrian properties out west, established neighborhoods, and the area around the college campuses. Wherever you are in town, C&amp;N Spotless comes to you with the film and tools and installs on site.</p>
+      <h3>Trucks and SUVs</h3>
+      <p>Pickups and SUVs are common in Davie, and Florida gives them more room than cars: the rear side windows and back glass can go as dark as 6%, while the front side windows stay at 28% or lighter. Darker rear glass also keeps tools and gear on the back seat or in the cargo area out of plain view.</p>
+      <h3>Larger homes</h3>
+      <p>Bigger homes often have more glass facing the sun. Residential film cuts the heat and glare in those rooms and helps protect floors and furniture from fading. We quote by the number and size of the windows, so you can start with the rooms that get the most sun.</p>
+      <h3>Businesses</h3>
+      <p>For offices and shops, we install before opening, after close or on weekends. For larger buildings, we can work in stages.</p>`,
+    faqs: [
+      ["Can you tint a pickup truck in Davie?", "Yes. We tint pickups at your home or job site. Trucks can go darker on the rear windows than cars (down to 6%), and we'll keep the front side windows at a legal 28% or lighter."],
+      ["Do you need a garage to tint my car?", "A garage is ideal, but a carport, covered parking or a shaded, sheltered driveway works too. What matters is keeping wind and dust off the glass while the film goes on."],
+      ["Can you tint a large property in stages?", "Yes. We'll quote by the number and size of the windows and can split the work into stages, starting with the rooms or buildings that need it most."],
+    ],
+  },
+];
+
+/* Cities that have their own page, for linking city names wherever they appear. */
+const CITY_LINK = Object.fromEntries(CITY_PAGES.map((c) => [c.city, `/${c.slug}`]));
+const linkCity = (name) => (CITY_LINK[name] ? `<a href="${CITY_LINK[name]}">${name}</a>` : name);
+
+/* Every area we serve, by county, for the Service Areas page. */
+const AREA_COUNTIES = [
+  { county: "Broward County", blurb: "Our home county. We're based in Lauderdale Lakes and cover every city in Broward, from Deerfield Beach and Parkland down to Hallandale Beach and Miramar.",
+    cities: ["Fort Lauderdale", "Lauderdale Lakes", "Pompano Beach", "Coral Springs", "Pembroke Pines", "Davie", "Plantation", "Sunrise", "Tamarac", "Miramar", "Hollywood", "Weston", "Deerfield Beach", "Lauderhill", "Margate", "Coconut Creek", "Oakland Park", "Wilton Manors", "Lighthouse Point", "Parkland", "Cooper City", "Dania Beach", "Hallandale Beach", "Southwest Ranches"] },
+  { county: "Palm Beach County", blurb: "We cover the southern and central part of the county, from Boca Raton and Delray Beach up through West Palm Beach.",
+    cities: ["West Palm Beach", "Boca Raton", "Delray Beach", "Boynton Beach", "Lake Worth Beach", "Wellington", "Riviera Beach"] },
+  { county: "Miami-Dade County", blurb: "We cover Miami and the surrounding cities, from Aventura in the north to Kendall in the south.",
+    cities: ["Miami", "Miami Beach", "Aventura", "North Miami", "Hialeah", "Doral", "Coral Gables", "Key Biscayne", "Kendall"] },
 ];
 
 /* ───────────────────────── helpers ───────────────────────── */
@@ -468,18 +640,81 @@ function img(name, alt, attrs = "") {
   return `<img src="/assets/${name}${name.startsWith("w-") ? "-800" : ""}.jpg" alt="${esc(alt)}" loading="lazy" decoding="async" width="${w}" height="${h}"${attrs}>`;
 }
 
+// Shared <head>: title, description, canonical, Open Graph/Twitter, preload and JSON-LD.
+function pageHead({ title, desc, url, place, heroSrc, heroW, heroH, heroAlt, lds }) {
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>${esc(title)}</title>
+<meta name="description" content="${esc(desc)}">
+<link rel="canonical" href="${url}">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#08080A">
+<meta name="geo.region" content="US-FL">
+<meta name="geo.placename" content="${place}, Florida">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="${esc(BUSINESS.name)}">
+<meta property="og:url" content="${url}">
+<meta property="og:title" content="${esc(title)}">
+<meta property="og:description" content="${esc(desc)}">
+<meta property="og:image" content="${SITE}${heroSrc}">
+<meta property="og:image:width" content="${heroW}">
+<meta property="og:image:height" content="${heroH}">
+<meta property="og:image:alt" content="${esc(heroAlt)}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(title)}">
+<meta name="twitter:description" content="${esc(desc)}">
+<meta name="twitter:image" content="${SITE}${heroSrc}">
+<meta name="twitter:image:alt" content="${esc(heroAlt)}">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/favicon.png">
+<link rel="preload" as="image" href="${heroSrc}" fetchpriority="high">
+${headFonts.trim()}
+${lds.map(ld).join("\n")}
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+`;
+}
+
+// Breadcrumb trail as [name, absolute URL]; the last item is the current page.
+function crumbs(trail) {
+  return {
+    schema: { "@context": "https://schema.org", "@type": "BreadcrumbList",
+      itemListElement: trail.map(([name, item], i) => ({ "@type": "ListItem", position: i + 1, name, item })) },
+    html: `<nav aria-label="Breadcrumb"><ol class="crumbs">${trail.map(([name, item], i) =>
+      i === trail.length - 1 ? `<li aria-current="page">${esc(name)}</li>` : `<li><a href="${item.slice(SITE.length) || "/"}">${esc(name)}</a></li>`).join("")}</ol></nav>`,
+  };
+}
+
+// Shared on every city page: the full service list and how a mobile install works.
+const cityExtras = (s) => `
+      <h3>Services in ${s.city}</h3>
+      <ul>
+        <li><a href="/automotive-window-tint">Car, truck and SUV window tint</a></li>
+        <li><a href="/residential-window-tint">Home window film</a> for comfort and UV protection</li>
+        <li><a href="/commercial-window-tint">Office, storefront and fleet tinting</a></li>
+        <li><a href="/automotive-window-tint#privacy-tint">Privacy tint</a> for rear windows</li>
+        <li><a href="/residential-window-tint#heat-and-glare">Heat and glare reduction</a> for sunny rooms</li>
+        <li><a href="/automotive-window-tint#windshield-strips">Windshield strips</a> above the AS-1 line</li>
+      </ul>
+      <h3>How mobile tinting works</h3>
+      <ol>
+        <li><b>Contact us.</b> Send the <a href="/#quote">quote form</a> or call or text ${BUSINESS.phoneDisplay}.</li>
+        <li><b>Talk through the job.</b> Tell us the vehicle or the windows and what you want to fix: heat, glare, privacy or fading.</li>
+        <li><b>Choose your film.</b> We recommend a film and shade, keep vehicles within Florida law, and confirm the price.</li>
+        <li><b>We come to you.</b> We arrive at your home, office or job site at the time we agreed.</li>
+        <li><b>Professional install.</b> We prep the glass, install the film, clean up and explain the cure time before we leave.</li>
+      </ol>`;
+
 function servicePage(s) {
   const url = `${SITE}/${s.slug}`;
   const heroSrc = `/assets/${s.hero}.jpg`;
   const [heroW, heroH] = IMAGE_SIZES[s.hero];
-  const breadcrumb = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
-      { "@type": "ListItem", position: 2, name: s.name, item: url },
-    ],
-  };
   const service = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -494,52 +729,15 @@ function servicePage(s) {
       : businessSchema.areaServed,
   };
 
-  return `<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>${esc(s.title)}</title>
-<meta name="description" content="${esc(s.desc)}">
-<link rel="canonical" href="${url}">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="theme-color" content="#08080A">
-<meta name="geo.region" content="US-FL">
-<meta name="geo.placename" content="${s.city || BUSINESS.region}, Florida">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="${esc(BUSINESS.name)}">
-<meta property="og:url" content="${url}">
-<meta property="og:title" content="${esc(s.title)}">
-<meta property="og:description" content="${esc(s.desc)}">
-<meta property="og:image" content="${SITE}${heroSrc}">
-<meta property="og:image:width" content="${heroW}">
-<meta property="og:image:height" content="${heroH}">
-<meta property="og:image:alt" content="${esc(s.heroAlt)}">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="${esc(s.title)}">
-<meta name="twitter:description" content="${esc(s.desc)}">
-<meta name="twitter:image" content="${SITE}${heroSrc}">
-<meta name="twitter:image:alt" content="${esc(s.heroAlt)}">
-<link rel="icon" href="/assets/favicon.png" type="image/png">
-<link rel="apple-touch-icon" href="/assets/favicon.png">
-<link rel="preload" as="image" href="${heroSrc}" fetchpriority="high">
-${headFonts.trim()}
-${ld(service)}
-${ld(breadcrumb)}
-${ld(faqSchema(s.faqs))}
-<link rel="stylesheet" href="/assets/site.css">
-</head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<!-- Generated by scripts/build-pages.js — edit the SERVICES data there, not this file. -->
+  const trail = crumbs([["Home", `${SITE}/`], ...(s.city ? [["Service Areas", `${SITE}/service-areas`]] : []), [s.name, url]]);
+  return `${pageHead({ title: s.title, desc: s.desc, url, place: s.city || BUSINESS.region, heroSrc, heroW, heroH, heroAlt: s.heroAlt, lds: [service, trail.schema, faqSchema(s.faqs)] })}<!-- Generated by scripts/build-pages.js — edit the SERVICES / CITY_PAGES data there, not this file. -->
 
 ${chrome}<main id="main">
 <section class="hero phero">
   <div class="hero-media"><img src="${heroSrc}" alt="" fetchpriority="high" width="${heroW}" height="${heroH}"></div>
   <div class="hero-sweep" aria-hidden="true"></div>
   <div class="wrap hero-in">
-    <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="/">Home</a></li><li aria-current="page">${esc(s.name)}</li></ol></nav>
+    ${trail.html}
     <span class="hero-tag"><i></i> ${esc(s.tag)}</span>
     <h1>${s.h1.map((l) => `<span class="ln">${l.startsWith("<em>") ? l : `<span>${l}</span>`}</span>`).join(" ")}</h1>
     <p class="hero-sub">${s.sub}</p>
@@ -552,7 +750,7 @@ ${chrome}<main id="main">
 
 <section class="sect">
   <div class="wrap split">
-    <article class="prose rv">${s.body}
+    <article class="prose rv">${s.body}${s.city ? cityExtras(s) : ""}
     </article>
     <div class="split-media rv rv-d1">
       ${s.images.map(([n, a]) => img(n, a)).join("\n      ")}
@@ -586,9 +784,9 @@ ${s.faqs.map(([q, a]) => `      <div class="faq-item">
       <span class="eyebrow">Service Area</span>
 ${s.city
       ? `      <h2>Serving ${esc(s.city)} and nearby.</h2>
-      <p class="lede">We also come to ${s.nearby.join(", ")} and everywhere else in ${BUSINESS.areaText}.</p>`
+      <p class="lede">We also come to ${s.nearby.map(linkCity).join(", ")} and everywhere else in ${BUSINESS.areaText}. <a href="/service-areas">See all service areas</a>.</p>`
       : `      <h2>Mobile ${esc(s.name.toLowerCase())} across ${BUSINESS.region}.</h2>
-      <p class="lede">We come to you in ${BUSINESS.cities.slice(0, -1).join(", ")} and ${BUSINESS.cities.at(-1)}.</p>`}
+      <p class="lede">We come to you in ${BUSINESS.cities.slice(0, -1).map(linkCity).join(", ")} and ${linkCity(BUSINESS.cities.at(-1))}. <a href="/service-areas">See all service areas</a>.</p>`}
     </div>
     <nav class="related rv" aria-label="Our services">
 ${SERVICES.map((o) => `      <a href="/${o.slug}"${o.slug === s.slug ? ' aria-current="page"' : ""}><b>${esc(o.short)}</b><span>${esc(o.blurb)}</span></a>`).join("\n")}
@@ -617,6 +815,91 @@ ${tail}<script src="/assets/site.js" defer></script>
 }
 
 for (const s of [...SERVICES, ...CITY_PAGES]) fs.writeFileSync(path.join(ROOT, `${s.slug}.html`), stamp(servicePage(s)));
+
+/* ───────────────────────── service areas hub ───────────────────────── */
+
+const AREAS = {
+  slug: "service-areas",
+  title: "Window Tinting Service Areas in South Florida | C&N Spotless",
+  desc: "See where C&N Spotless offers mobile window tinting across Broward, Miami-Dade and Palm Beach counties. Find your city and get a free quote.",
+  hero: "install",
+  heroAlt: "Window film being installed on a vehicle's door glass",
+};
+
+function areasPage() {
+  const url = `${SITE}/${AREAS.slug}`;
+  const heroSrc = `/assets/${AREAS.hero}.jpg`;
+  const [heroW, heroH] = IMAGE_SIZES[AREAS.hero];
+  const trail = crumbs([["Home", `${SITE}/`], ["Service Areas", url]]);
+  return `${pageHead({ title: AREAS.title, desc: AREAS.desc, url, place: BUSINESS.region, heroSrc, heroW, heroH, heroAlt: AREAS.heroAlt, lds: [trail.schema] })}<!-- Generated by scripts/build-pages.js — edit AREA_COUNTIES there, not this file. -->
+
+${chrome}<main id="main">
+<section class="hero phero">
+  <div class="hero-media"><img src="${heroSrc}" alt="" fetchpriority="high" width="${heroW}" height="${heroH}"></div>
+  <div class="hero-sweep" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    ${trail.html}
+    <span class="hero-tag"><i></i> Mobile Service · ${BUSINESS.region}</span>
+    <h1><span class="ln"><span>Mobile window tinting</span></span> <span class="ln"><em>service areas.</em></span></h1>
+    <p class="hero-sub">C&amp;N Spotless is a mobile service based in Lauderdale Lakes. We come to homes, offices and job sites across Broward, Palm Beach and Miami-Dade.</p>
+    <div class="hero-btns">
+      <a class="btn btn-red" href="/#quote">Get a Free Quote</a>
+      <a class="btn btn-ghost" href="tel:${BUSINESS.phone.replace(/-/g, "")}">Call ${BUSINESS.phoneDisplay}</a>
+    </div>
+  </div>
+</section>
+
+<section class="sect">
+  <div class="wrap">
+    <div class="sect-head rv">
+      <span class="eyebrow">Where We Work</span>
+      <h2>We come to you.</h2>
+      <p class="lede">There's no shop to visit. We bring the film, tools and setup to your driveway, parking garage, office or job site and install on the spot. Find your city below; the highlighted ones have their own page with local details.</p>
+    </div>
+${AREA_COUNTIES.map((c) => `    <div class="area-county rv">
+      <h2>${esc(c.county)}</h2>
+      <p>${esc(c.blurb)}</p>
+      <ul class="area-list" aria-label="Cities we serve in ${esc(c.county)}">
+${c.cities.map((city) => `        <li>${linkCity(city)}</li>`).join("\n")}
+      </ul>
+    </div>`).join("\n")}
+    <p class="area-note rv">Don't see your city? If it's in one of these three counties, we most likely cover it. Put your ZIP code in the <a href="/#quote">quote form</a> or call ${BUSINESS.phoneDisplay} and we'll confirm.</p>
+  </div>
+</section>
+
+<section class="sect why">
+  <div class="wrap">
+    <div class="sect-head rv">
+      <span class="eyebrow">What We Tint</span>
+      <h2>Every service, at your address.</h2>
+    </div>
+    <nav class="related rv" aria-label="Our services">
+${SERVICES.map((o) => `      <a href="/${o.slug}"><b>${esc(o.short)}</b><span>${esc(o.blurb)}</span></a>`).join("\n")}
+    </nav>
+  </div>
+</section>
+
+<section class="sect fcta">
+  <div class="fcta-bg"><img src="/assets/cabin-pov.jpg" alt="" loading="lazy" width="1500" height="1125"></div>
+  <div class="wrap rv">
+    <span class="eyebrow" style="justify-content:center">Ready When You Are</span>
+    <h2>Get a free quote at your address.</h2>
+    <p>Tell us what needs tinting and where you are. We'll bring the shop to you.</p>
+    <div class="fcta-btns">
+      <a class="btn btn-red" href="/#quote">Get a Free Quote</a>
+      <a class="btn btn-ghost" href="tel:${BUSINESS.phone.replace(/-/g, "")}">Call ${BUSINESS.phoneDisplay}</a>
+    </div>
+  </div>
+</section>
+</main>
+
+${tail}<script src="/assets/site.js" defer></script>
+</body>
+</html>
+`;
+}
+
+fs.writeFileSync(path.join(ROOT, `${AREAS.slug}.html`), stamp(areasPage()));
 
 // 404 page — same look, points people back to something useful. Not in the sitemap.
 fs.writeFileSync(path.join(ROOT, "404.html"), stamp(`<!doctype html>
@@ -653,7 +936,7 @@ ${tail}<script src="/assets/site.js" defer></script>
 /* ───────────────────────── sitemap + robots ───────────────────────── */
 
 const today = new Date().toISOString().slice(0, 10);
-const urls = [{ loc: `${SITE}/`, pri: "1.0" }, ...SERVICES.map((s) => ({ loc: `${SITE}/${s.slug}`, pri: "0.8" })), ...CITY_PAGES.map((c) => ({ loc: `${SITE}/${c.slug}`, pri: "0.7" }))];
+const urls = [{ loc: `${SITE}/`, pri: "1.0" }, ...SERVICES.map((s) => ({ loc: `${SITE}/${s.slug}`, pri: "0.8" })), { loc: `${SITE}/${AREAS.slug}`, pri: "0.8" }, ...CITY_PAGES.map((c) => ({ loc: `${SITE}/${c.slug}`, pri: "0.7" }))];
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map((u) => `  <url><loc>${u.loc}</loc><lastmod>${today}</lastmod><priority>${u.pri}</priority></url>`).join("\n")}
@@ -665,4 +948,4 @@ Allow: /
 Sitemap: ${SITE}/sitemap.xml
 `);
 
-console.log(`SEO build: index schema (${homeFaqs.length} FAQs) + ${SERVICES.length} service pages + ${CITY_PAGES.length} city pages + sitemap.xml + robots.txt`);
+console.log(`SEO build: index schema (${homeFaqs.length} FAQs) + ${SERVICES.length} service pages + ${CITY_PAGES.length} city pages + service areas + sitemap.xml + robots.txt`);

@@ -621,6 +621,14 @@ form.qf.sent .ck-tick{animation:draw 350ms var(--ease-out) .55s forwards}
 .area-list li::before{content:"";width:6px;height:6px;flex:none;background:var(--red);transform:skewX(-20deg)}
 .area-list a{color:inherit;transition:color .2s}
 .area-list a:hover{color:var(--red-2)}
+/* Service Areas page: one block per county; cities with their own page stand out */
+.area-county{margin-top:clamp(40px,5vw,64px)}
+.area-county h2{font-size:clamp(1.3rem,2.2vw,1.7rem);margin-bottom:12px}
+.area-county>p{color:var(--fg-2);max-width:68ch;margin-bottom:18px}
+.area-county .area-list a{color:var(--fg);font-weight:600}
+.area-note{margin-top:clamp(32px,4vw,48px);color:var(--fg-2);max-width:68ch}
+.area-note a{color:var(--fg);font-weight:600}
+.area-note a:hover{color:var(--red-2)}
 @media (max-width:1080px){.area-layout{grid-template-columns:1fr}}
 @media (max-width:560px){.area-list{grid-template-columns:1fr 1fr}}
 
@@ -638,7 +646,11 @@ form.qf.sent .ck-tick{animation:draw 350ms var(--ease-out) .55s forwards}
 .prose h3{font-size:1.1rem;margin:34px 0 10px}
 .prose p,.prose li{color:var(--fg-2);font-size:1rem;line-height:1.7}
 .prose p+p{margin-top:14px}
-.prose ul{padding-left:20px;display:grid;gap:8px;margin:14px 0}
+.prose ul,.prose ol{padding-left:20px;display:grid;gap:8px;margin:14px 0}
+.prose b{color:var(--fg)}
+/* in-text links: brighter than body copy, red on hover (no underline, to match the site) */
+.prose a,.lede a{color:var(--fg);font-weight:600;transition:color .2s}
+.prose a:hover,.lede a:hover{color:var(--red-2)}
 .split{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,4.5vw,70px);align-items:start}
 .split-media{display:grid;gap:14px;position:sticky;top:110px}
 .split-media img{width:100%;border-radius:var(--r);border:1px solid var(--line);aspect-ratio:4/3;object-fit:cover}
