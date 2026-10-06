@@ -685,6 +685,7 @@ form.qf.sent .ck-tick{animation:draw 350ms var(--ease-out) .55s forwards}
 .area-map{aspect-ratio:4/5}
 /* hide the My Maps title bar (map name + owner profile) by pulling the frame up under the card edge */
 .area-map iframe{top:-68px;height:calc(100% + 68px)}
+.loc-links{display:flex;flex-wrap:wrap;gap:0 24px}
 .loc-dir{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:6px 0;color:var(--red-2);font-weight:600}
 .loc-dir span{transition:transform .25s}
 .loc-dir:hover span{transform:translateX(4px)}
