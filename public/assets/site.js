@@ -239,6 +239,16 @@ function compareSlider(stage, handle){
   });
 })();
 
+/* ---------- Google tag events: leads for Google Analytics / Google Ads ---------- */
+// gtag is defined in the page <head>; if it's blocked (ad blocker), nothing happens.
+function track(name, params){
+  try{ if(typeof window.gtag === "function") window.gtag("event", name, params || {}); }catch(e){}
+}
+document.addEventListener("click", function(e){
+  var a = e.target.closest && e.target.closest('a[href^="tel:"]');
+  if(a) track("click_to_call", { link_url: a.getAttribute("href"), page_path: location.pathname });
+});
+
 /* ---------- FAQ accordion ---------- */
 $$(".faq-q").forEach(function(btn){
   var panel = btn.nextElementSibling;
@@ -496,6 +506,7 @@ $$(".faq-q").forEach(function(btn){
         });
       }).then(function(){
         noteSend();
+        track("generate_lead", { form_name: "quote", service: data.service || "not given" });
         done("Thanks " + (data.name.split(" ")[0] || "") + ", your request is in. We'll come back to you with a shade recommendation and a price.");
       }).catch(function(err){
         btn.disabled = false;
