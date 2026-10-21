@@ -106,7 +106,7 @@ const SERVICES = [
     short: "Automotive Tint",
     blurb: "Cars, trucks & SUVs",
     title: "Car Window Tinting in South Florida | C&N Spotless",
-    desc: "Mobile car, truck & SUV window tinting in your driveway across Miami-Dade, Broward & Palm Beach. Florida-legal shades. (954) 213-7808.",
+    desc: "Mobile car tint at your home or office. Cars, trucks & SUVs tinted in your driveway across Miami-Dade, Broward & Palm Beach. Florida-legal shades.",
     tag: "Automotive · South Florida",
     h1: ["Car window tinting,", "<em>done in your driveway.</em>"],
     sub: "Cars, trucks and SUVs tinted at your home or office anywhere in Miami-Dade, Broward or Palm Beach. Florida-legal shades, clean edges, and no day lost at a shop.",
@@ -115,15 +115,18 @@ const SERVICES = [
     images: [["w-gt3-doors", "Yellow Porsche 911 GT3 with doors open after a window tint install"], ["w-c6-rear", "Tinted rear window on a yellow C6 Corvette"], ["w-mustang-glass", "Freshly tinted door glass on a white Ford Mustang"]],
     body: `
       <h2>Tint that looks factory and keeps you legal in Florida.</h2>
-      <p>South Florida sun turns a parked car into an oven and fades dashboards and leather fast. Good window film cuts the heat and glare you feel through the glass and blocks nearly all UV, while giving you privacy on the rear windows. We install it wherever the car already is: your driveway, your office lot, your job site.</p>
+      <p>South Florida sun turns a parked car into an oven and fades dashboards and leather fast. Good window film cuts the heat and glare you feel through the glass and blocks nearly all UV, while giving you privacy on the rear windows. It's mobile car tint at your home: we install it wherever the car already is, whether that's your driveway, your office lot or your job site.</p>
       <h3>What we tint</h3>
       <ul>
         <li>Full vehicles: side windows and back glass</li>
         <li>Front two windows only, to match factory-tinted rear glass</li>
+        <li>Back passenger windows and rear glass only</li>
         <li>Windshield visor strips (above the AS-1 line)</li>
         <li>Cars, coupes, convertibles, trucks, SUVs and vans</li>
         <li>Removal of old, bubbling or purple tint before re-tinting</li>
       </ul>
+      <h3 id="back-windows">Back passenger windows only</h3>
+      <p>Plenty of customers only want the back done: the rear passenger windows and the back glass. It's common when the front windows are already tinted, or when you want privacy for kids, pets or gear on the back seat without darkening the driver's view. Florida lets the rear side windows and back glass go darker than the front, down to 15% on cars and coupes and 6% on SUVs, trucks and vans. Many SUVs and trucks already have factory privacy glass in the back; if you want it darker or cooler, we'll factor in the factory shade so the combined result stays legal.</p>
       <h3 id="privacy-tint">Privacy tint</h3>
       <p>If you want people to see less of what's inside, the rear side windows and back glass are where you can go darker. Florida allows 15% on those windows for cars and coupes, and 6% for SUVs, trucks and vans, while the front side windows stay at 28% or lighter. We'll match the shade to your vehicle type so the car looks consistent and stays legal. For privacy at home, see <a href="/residential-window-tint#daytime-privacy">residential privacy film</a>.</p>
       <h3 id="windshield-strips">Windshield strips</h3>
@@ -138,6 +141,7 @@ const SERVICES = [
       <p>Most full vehicles take about 2 to 4 hours. We need a reasonably sheltered spot: a garage, carport or shaded driveway is ideal, since wind and dust are the enemy of a clean install. Afterwards, leave the windows up for 3 to 5 days while the film cures; a little haze or a few small water pockets during that time is normal and clears on its own.</p>`,
     faqs: [
       ["How much does car window tinting cost in South Florida?", "It depends on the vehicle, how many windows, the film you choose and whether old tint needs removing. Send us the year, make and model and we'll give you an exact price before anything is booked."],
+      ["Can you tint just the back passenger windows?", "Yes. We can tint only the rear passenger windows and back glass, which Florida allows darker than the front: down to 15% on cars and 6% on SUVs, trucks and vans. We'll do it at your home or office."],
       ["Can you tint my car at my apartment or office?", "Yes, that's how we work. We come to your home, apartment complex, office or job site anywhere in Miami-Dade, Broward or Palm Beach. We just need a spot that's reasonably out of the wind and dust."],
       ["Can I roll my windows down after tinting?", "Wait 3 to 5 days. The film needs that time to cure and bond to the glass; rolling the window down early can catch the bottom edge and lift it."],
     ],
