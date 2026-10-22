@@ -673,8 +673,9 @@ function pageHead({ title, desc, url, place, heroSrc, heroW, heroH, heroAlt, lds
 <meta name="twitter:description" content="${esc(desc)}">
 <meta name="twitter:image" content="${SITE}${heroSrc}">
 <meta name="twitter:image:alt" content="${esc(heroAlt)}">
-<link rel="icon" href="/assets/favicon.png" type="image/png">
-<link rel="apple-touch-icon" href="/assets/favicon.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/assets/favicon-192.png">
 <link rel="preload" as="image" href="${heroSrc}" fetchpriority="high">
 ${headFonts.trim()}
 ${lds.map(ld).join("\n")}
@@ -913,7 +914,8 @@ fs.writeFileSync(path.join(ROOT, "404.html"), stamp(`<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Page not found | ${esc(BUSINESS.name)}</title>
 <meta name="robots" content="noindex">
-<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/favicon-192.png" type="image/png" sizes="192x192">
 ${headFonts.trim()}
 <link rel="stylesheet" href="/assets/site.css">
 </head>
