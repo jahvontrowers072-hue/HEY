@@ -633,7 +633,7 @@ fs.writeFileSync(indexPath, index);
 
 /* ───────────────────────── service pages ───────────────────────── */
 
-const headFonts = between(index, '<link rel="preconnect" href="https://fonts.googleapis.com">', "<!-- @business-schema");
+const headFonts = between(index, "<!-- @head-shared", "<!-- @business-schema");
 const chrome = rootLinks(between(index, "<!-- ========== NAV ========== -->", "<main id=\"main\">"));
 const tail = rootLinks(between(index, "<!-- ========== FOOTER ========== -->", "<!-- ========== LIGHTBOX ========== -->"))
   + between(index, "<!-- ========== LEGAL MODALS ========== -->", '<script src="/assets/site.js');

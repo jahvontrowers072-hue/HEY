@@ -261,6 +261,23 @@ document.addEventListener("click", function(e){
   if(a) track("click_to_call", { link_url: a.getAttribute("href"), page_path: location.pathname });
 });
 
+/* ---------- Google reviews widget (Elfsight): load only when the section is near ---------- */
+(function(){
+  var box = $(".rev-widget"); if(!box) return;
+  function load(){
+    if(window.__elfsightLoaded) return; window.__elfsightLoaded = true;
+    var s = document.createElement("script");
+    s.src = "https://elfsightcdn.com/platform.js"; s.async = true;
+    document.body.appendChild(s);
+  }
+  if("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(es){
+      if(es.some(function(e){ return e.isIntersecting; })){ io.disconnect(); load(); }
+    }, { rootMargin: "800px 0px" });
+    io.observe(box);
+  } else { window.addEventListener("load", load, { once: true }); }
+})();
+
 /* ---------- FAQ accordion ---------- */
 $$(".faq-q").forEach(function(btn){
   var panel = btn.nextElementSibling;

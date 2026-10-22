@@ -29,17 +29,21 @@
 <link rel="icon" href="/assets/favicon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/assets/favicon-192.png">
 <link rel="preload" as="image" href="/assets/rr-glass.jpg" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700;1,800&family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700;1,800&family=Inter:wght@400;500;600&display=swap"></noscript>
-<!-- Google tag (gtag.js): Google Analytics + Google Ads. Copied into every generated page by scripts/build-pages.js. -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y2N171HXDP"></script>
+<!-- @head-shared: fonts + Google tag, copied into every generated page by scripts/build-pages.js -->
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Google tag (gtag.js): Google Analytics + Google Ads. The library loads after the page has
+     finished, so it never delays first paint; config and events queue in dataLayer until then. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag("js", new Date());
   gtag("config", "G-Y2N171HXDP");
+  window.addEventListener("load", function(){
+    var s = document.createElement("script");
+    s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=G-Y2N171HXDP";
+    document.head.appendChild(s);
+  });
 </script>
 <script type="application/ld+json">
 {
@@ -259,7 +263,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="/assets/site.css?v=8b809b3f40">
+<link rel="stylesheet" href="/assets/site.css?v=00e9166cbf">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -511,7 +515,6 @@
     <ul>
       <li><b>Formspree</b> delivers the quote form to our email inbox. Your form details pass through Formspree to reach us.</li>
       <li><b>Google Maps</b> shows our service-area map. Google may receive your IP address and set its own cookies when the map loads.</li>
-      <li><b>Google Fonts</b> provides the text fonts on this site, which means Google receives your IP address when the page loads.</li>
       <li><b>Elfsight</b> displays our Google reviews. It loads from Elfsight's servers and may receive your IP address.</li>
       <li><b>Google Analytics and Google Ads</b> (the Google tag) measure how visitors find and use this site, such as which pages are viewed and whether the quote form was sent or the phone number tapped, so we can see which ads bring in customers. Google sets cookies to do this and handles the data under its own privacy policy.</li>
       <li><b>Vercel</b> hosts this website and keeps standard server logs (such as IP address, browser and pages requested) for security and reliability.</li>
@@ -553,6 +556,6 @@
   </div>
 </div>
 
-<script src="/assets/site.js?v=41d3ad287c" defer></script>
+<script src="/assets/site.js?v=69fe874f13" defer></script>
 </body>
 </html>
