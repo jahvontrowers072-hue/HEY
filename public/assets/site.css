@@ -534,7 +534,8 @@ form.qf.sent .qf-success{display:block}
 .hero h1 .ln>*{display:inline-block;animation:lineUp 800ms var(--ease-out) both}
 .hero h1 .ln:nth-child(1)>*{animation-delay:.45s}
 .hero h1 .ln:nth-child(2)>*{animation-delay:.53s}
-.hero-sub{animation:rise 700ms var(--ease-out) .65s both}
+.hero-sub{animation:riseSoft 600ms var(--ease-out) .1s both}
+@keyframes riseSoft{from{opacity:.4;transform:translateY(12px)}to{opacity:1;transform:none}}
 .hero-btns{animation:rise 700ms var(--ease-out) .73s both}
 .hero-meta>div{animation:rise 700ms var(--ease-out) both}
 .hero-meta>div:nth-child(1){animation-delay:.85s}.hero-meta>div:nth-child(2){animation-delay:.9s}

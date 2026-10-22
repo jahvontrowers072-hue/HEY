@@ -920,7 +920,7 @@ ${headFonts.trim()}
 <body>
 ${chrome}<main id="main">
 <section class="hero phero">
-  <div class="hero-media"><img src="/assets/hero-poster.jpg" alt="" width="1280" height="720"></div>
+  <div class="hero-media"><img src="/assets/hero-poster.webp" alt="" width="1280" height="720"></div>
   <div class="wrap hero-in">
     <span class="hero-tag"><i></i> 404 · Page not found</span>
     <h1><span class="ln"><span>That page</span></span> <span class="ln"><em>isn't here.</em></span></h1>

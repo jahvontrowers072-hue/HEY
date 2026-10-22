@@ -52,8 +52,20 @@ function playHero(){
   heroVid.muted = true;
   var p = heroVid.play(); if(p && p.catch) p.catch(function(){});
 }
-if(heroVid){
+// The video file is attached after the page has loaded, so it never competes with the
+// text, styles and poster image for bandwidth. Phones get a lighter 480p version.
+function loadHeroVideo(){
+  var small = window.matchMedia("(max-width: 760px)").matches;
+  $$("source[data-src]", heroVid).forEach(function(s){
+    if(small && s.hasAttribute("data-desktop-only")){ s.remove(); return; }
+    s.src = small && s.getAttribute("data-src-mobile") ? s.getAttribute("data-src-mobile") : s.getAttribute("data-src");
+  });
+  heroVid.load();
   playHero();
+}
+if(heroVid){
+  if(document.readyState === "complete") loadHeroVideo();
+  else window.addEventListener("load", loadHeroVideo, { once: true });
   heroVid.addEventListener("canplay", playHero);
   document.addEventListener("visibilitychange", function(){ if(!document.hidden) playHero(); });
   ["pointerdown","keydown","touchstart","scroll"].forEach(function(ev){
