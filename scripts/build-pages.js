@@ -11,6 +11,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import crypto from "node:crypto";
+import { TIPS, TIPS_HUB } from "./tips.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "public");
 // The one production domain. Every canonical, sitemap, Open Graph and schema URL is built from it.
@@ -29,6 +30,8 @@ const IMAGE_SIZES = {
   "w-modely": [1600, 1200],
   "w-c6-rear": [1600, 1200],
   "w-gt3-doors": [1600, 1200],
+  "rr-rear": [1280, 720],
+  "shade-base": [1280, 720],
 };
 
 const BUSINESS = {
@@ -136,7 +139,8 @@ const SERVICES = [
       <h3>Florida window tint law</h3>
       <p>Florida sets separate limits for the front side windows and the rear windows, and they differ between cars and SUVs/trucks/vans. The percentage is how much light the film lets through. Lower is darker.</p>
       ${LAW_TABLE}
-      <p style="margin-top:18px">Tell us the vehicle when you ask for a quote and we'll recommend the darkest shade that stays legal.</p>
+      <p style="margin-top:18px">For every window, reflectivity limits and medical exemptions, read our <a href="/florida-window-tint-law">Florida window tint law guide</a>.</p>
+      <p style="margin-top:14px">Tell us the vehicle when you ask for a quote and we'll recommend the darkest shade that stays legal.</p>
       <h3>How a mobile install works</h3>
       <p>Most full vehicles take about 2 to 4 hours. We need a reasonably sheltered spot: a garage, carport or shaded driveway is ideal, since wind and dust are the enemy of a clean install. Afterwards, leave the windows up for 3 to 5 days while the film cures; a little haze or a few small water pockets during that time is normal and clears on its own.</p>`,
     faqs: [
@@ -176,6 +180,7 @@ const SERVICES = [
       <p>Darker and reflective films make it hard to see in during the day while you can still see out. At night, with lights on inside, that reverses, so rooms that need privacy after dark still need blinds or curtains. We'll help you choose a film that fits how you use each room. Tinting a vehicle for privacy instead? See <a href="/automotive-window-tint#privacy-tint">automotive privacy tint</a>.</p>
       <h3>Condos and HOAs</h3>
       <p>Many South Florida condo associations and HOAs have rules about how tinted windows look from outside, usually the shade or how reflective it is. If you're in one, check with your association first; we're happy to provide film samples and spec sheets for their approval.</p>
+      <p>Wondering about the power bill? Read <a href="/home-window-film-energy-savings">whether home window film lowers your energy bill</a>.</p>
       <h3>How it works</h3>
       <p>Tell us roughly how many windows and their sizes (photos help) and we'll quote it. On install day we clean the glass, fit the film to each pane and clean up after ourselves. Film can look slightly hazy for a few days while it cures. That's normal and clears on its own.</p>`,
     faqs: [
@@ -906,6 +911,118 @@ ${tail}<script src="/assets/site.js" defer></script>
 
 fs.writeFileSync(path.join(ROOT, `${AREAS.slug}.html`), stamp(areasPage()));
 
+/* ───────────────────────── tint tips (articles) ───────────────────────── */
+
+const fmtDate = (iso) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
+const fcta = (heading) => `<section class="sect fcta">
+  <div class="fcta-bg"><img src="/assets/cabin-pov.jpg" alt="" loading="lazy" width="1500" height="1125"></div>
+  <div class="wrap rv">
+    <span class="eyebrow" style="justify-content:center">Ready When You Are</span>
+    <h2>${heading}</h2>
+    <p>Tell us what needs tinting and where you are. We'll bring the shop to you.</p>
+    <div class="fcta-btns">
+      <a class="btn btn-red" href="/#quote">Get a Free Quote</a>
+      <a class="btn btn-ghost" href="tel:${BUSINESS.phone.replace(/-/g, "")}">Call ${BUSINESS.phoneDisplay}</a>
+    </div>
+  </div>
+</section>`;
+
+function hero(heroSrc, heroW, heroH, crumbHtml, tag, h1, sub) {
+  return `<section class="hero phero">
+  <div class="hero-media"><img src="${heroSrc}" alt="" fetchpriority="high" width="${heroW}" height="${heroH}"></div>
+  <div class="hero-sweep" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    ${crumbHtml}
+    <span class="hero-tag"><i></i> ${tag}</span>
+    <h1>${h1.map((l) => `<span class="ln">${l.startsWith("<em>") ? l : `<span>${l}</span>`}</span>`).join(" ")}</h1>
+    <p class="hero-sub">${sub}</p>
+  </div>
+</section>`;
+}
+
+function articlePage(a) {
+  const url = `${SITE}/${a.slug}`;
+  const heroSrc = `/assets/${a.hero}.jpg`;
+  const [heroW, heroH] = IMAGE_SIZES[a.hero];
+  const trail = crumbs([["Home", `${SITE}/`], ["Tint Tips", `${SITE}/${TIPS_HUB.slug}`], [a.headline.replace(/^./, (c) => c.toUpperCase()), url]]);
+  const article = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: a.headline.replace(/^./, (c) => c.toUpperCase()),
+    description: a.desc,
+    image: `${SITE}${heroSrc}`,
+    datePublished: a.date,
+    dateModified: a.updated || a.date,
+    author: { "@type": "Organization", "@id": businessId, name: BUSINESS.name, url: `${SITE}/` },
+    publisher: { "@id": businessId },
+    mainEntityOfPage: url,
+  };
+  const others = TIPS.filter((o) => o.slug !== a.slug);
+  return `${pageHead({ title: a.title, desc: a.desc, url, place: BUSINESS.region, heroSrc, heroW, heroH, heroAlt: a.heroAlt, lds: [article, trail.schema] })}<!-- Generated by scripts/build-pages.js from scripts/tips.js, not this file. -->
+
+${chrome}<main id="main">
+${hero(heroSrc, heroW, heroH, trail.html, `Tint Tips · ${a.read} min read`, a.h1, a.sub)}
+
+<section class="sect">
+  <div class="wrap">
+    <article class="prose rv">
+      <p class="tip-meta">By ${esc(BUSINESS.name)} · <time datetime="${a.date}">${fmtDate(a.date)}</time></p>${a.body(LAW_TABLE)}
+      <div class="faq-aside" style="margin-top:40px">
+        <h3>Want a straight answer for your vehicle or home?</h3>
+        <p>Learn more about our <a href="${a.service[0]}">${a.service[1]}</a>, or send us the details and we'll recommend a film and give you a price.</p>
+        <a class="btn btn-red btn-sm" href="/#quote">Get a Free Quote</a>
+      </div>
+      <h2 style="margin-top:56px">More tint tips</h2>
+      <ul>
+${others.map((o) => `        <li><a href="/${o.slug}">${esc(o.headline.replace(/^./, (c) => c.toUpperCase()))}</a></li>`).join("\n")}
+      </ul>
+    </article>
+  </div>
+</section>
+
+${fcta("Get a free window tint quote.")}
+</main>
+
+${tail}<script src="/assets/site.js" defer></script>
+</body>
+</html>
+`;
+}
+
+function tipsHubPage() {
+  const h = TIPS_HUB, url = `${SITE}/${h.slug}`;
+  const heroSrc = `/assets/${h.hero}.jpg`;
+  const [heroW, heroH] = IMAGE_SIZES[h.hero];
+  const trail = crumbs([["Home", `${SITE}/`], ["Tint Tips", url]]);
+  return `${pageHead({ title: h.title, desc: h.desc, url, place: BUSINESS.region, heroSrc, heroW, heroH, heroAlt: h.heroAlt, lds: [trail.schema] })}<!-- Generated by scripts/build-pages.js from scripts/tips.js, not this file. -->
+
+${chrome}<main id="main">
+${hero(heroSrc, heroW, heroH, trail.html, "Tint Tips · Guides", ["Window tint,", "<em>explained straight.</em>"], "Plain answers to the questions we hear most: what's legal in Florida, which film to choose, and how to look after it.")}
+
+<section class="sect">
+  <div class="wrap">
+    <div class="sect-head rv">
+      <span class="eyebrow">Guides</span>
+      <h2>Start with the question you have.</h2>
+    </div>
+    <nav class="related tips-list rv" aria-label="Tint tips articles">
+${TIPS.map((a) => `      <a href="/${a.slug}"><b>${esc(a.headline.replace(/^./, (c) => c.toUpperCase()))}</b><span>${esc(a.desc)}</span></a>`).join("\n")}
+    </nav>
+  </div>
+</section>
+
+${fcta("Have a question we didn't cover?")}
+</main>
+
+${tail}<script src="/assets/site.js" defer></script>
+</body>
+</html>
+`;
+}
+
+for (const a of TIPS) fs.writeFileSync(path.join(ROOT, `${a.slug}.html`), stamp(articlePage(a)));
+fs.writeFileSync(path.join(ROOT, `${TIPS_HUB.slug}.html`), stamp(tipsHubPage()));
+
 // 404 page — same look, points people back to something useful. Not in the sitemap.
 fs.writeFileSync(path.join(ROOT, "404.html"), stamp(`<!doctype html>
 <html lang="en">
@@ -942,10 +1059,10 @@ ${tail}<script src="/assets/site.js" defer></script>
 /* ───────────────────────── sitemap + robots ───────────────────────── */
 
 const today = new Date().toISOString().slice(0, 10);
-const urls = [{ loc: `${SITE}/`, pri: "1.0" }, ...SERVICES.map((s) => ({ loc: `${SITE}/${s.slug}`, pri: "0.8" })), { loc: `${SITE}/${AREAS.slug}`, pri: "0.8" }, ...CITY_PAGES.map((c) => ({ loc: `${SITE}/${c.slug}`, pri: "0.7" }))];
+const urls = [{ loc: `${SITE}/`, pri: "1.0" }, ...SERVICES.map((s) => ({ loc: `${SITE}/${s.slug}`, pri: "0.8" })), { loc: `${SITE}/${AREAS.slug}`, pri: "0.8" }, ...CITY_PAGES.map((c) => ({ loc: `${SITE}/${c.slug}`, pri: "0.7" })), { loc: `${SITE}/${TIPS_HUB.slug}`, pri: "0.6" }, ...TIPS.map((a) => ({ loc: `${SITE}/${a.slug}`, pri: "0.6", lastmod: a.updated || a.date }))];
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map((u) => `  <url><loc>${u.loc}</loc><lastmod>${today}</lastmod><priority>${u.pri}</priority></url>`).join("\n")}
+${urls.map((u) => `  <url><loc>${u.loc}</loc><lastmod>${u.lastmod || today}</lastmod><priority>${u.pri}</priority></url>`).join("\n")}
 </urlset>
 `);
 fs.writeFileSync(path.join(ROOT, "robots.txt"), `User-agent: *
@@ -954,4 +1071,4 @@ Allow: /
 Sitemap: ${SITE}/sitemap.xml
 `);
 
-console.log(`SEO build: index schema (${homeFaqs.length} FAQs) + ${SERVICES.length} service pages + ${CITY_PAGES.length} city pages + service areas + sitemap.xml + robots.txt`);
+console.log(`SEO build: index schema (${homeFaqs.length} FAQs) + ${SERVICES.length} service pages + ${CITY_PAGES.length} city pages + service areas + ${TIPS.length} tint tips + sitemap.xml + robots.txt`);

@@ -674,7 +674,13 @@ form.qf.sent .ck-tick{animation:draw 350ms var(--ease-out) .55s forwards}
 .related span{font-size:.86rem;color:var(--fg-3)}
 .related a[aria-current="page"]{border-color:var(--red)}
 @media (max-width:1080px){.split{grid-template-columns:1fr}.split-media{position:static;grid-template-columns:1fr 1fr}}
-@media (max-width:760px){.related{grid-template-columns:1fr}}
+.related.tips-list{grid-template-columns:repeat(2,1fr)}
+/* Tint Tips articles */
+.tip-meta{font-size:.82rem;color:var(--fg-3);margin-bottom:26px}
+.tip-note{margin-top:26px;font-size:.82rem;color:var(--fg-3);border-left:2px solid var(--red-deep);padding-left:14px}
+.prose .law{overflow-x:auto}
+@media (max-width:480px){.prose .law th,.prose .law td{padding:10px 9px}}
+@media (max-width:760px){.related{grid-template-columns:1fr}.related.tips-list{grid-template-columns:1fr}}
 
 /* Slanted slash shapes removed by request */
 .hero-slash{display:none}
