@@ -1174,7 +1174,7 @@ ${chrome}<main id="main">
       <svg class="ty-check" viewBox="0 0 24 24" aria-hidden="true"><circle class="ck-ring" cx="12" cy="12" r="9.2" pathLength="1"/><path class="ck-tick" d="m8.2 12.3 2.6 2.6 5-5.4" pathLength="1"/></svg>
       <h1>Thank you!</h1>
       <p>Your quote request is in. We'll get back to you shortly with a shade recommendation and a price.</p>
-      <p class="ty-sub">Need it sooner? Call or text us — we usually answer right away.</p>
+      <p class="ty-sub">Need it sooner? Call or text us. We usually answer right away.</p>
       <div class="ty-btns">
         <a class="btn btn-red" href="tel:${BUSINESS.phone.replace(/-/g, "")}">Call ${BUSINESS.phoneDisplay}</a>
         <a class="btn btn-ghost" href="/">Back to Home</a>
