@@ -261,22 +261,11 @@ document.addEventListener("click", function(e){
   if(a) track("click_to_call", { link_url: a.getAttribute("href"), page_path: location.pathname });
 });
 
-/* ---------- Google reviews widget (Elfsight): load only when the section is near ---------- */
-(function(){
-  var box = $(".rev-widget"); if(!box) return;
-  function load(){
-    if(window.__elfsightLoaded) return; window.__elfsightLoaded = true;
-    var s = document.createElement("script");
-    s.src = "https://elfsightcdn.com/platform.js"; s.async = true;
-    document.body.appendChild(s);
-  }
-  if("IntersectionObserver" in window){
-    var io = new IntersectionObserver(function(es){
-      if(es.some(function(e){ return e.isIntersecting; })){ io.disconnect(); load(); }
-    }, { rootMargin: "800px 0px" });
-    io.observe(box);
-  } else { window.addEventListener("load", load, { once: true }); }
-})();
+/* ---------- reviews: count clicks on "See more reviews" ---------- */
+document.addEventListener("click", function(e){
+  var a = e.target.closest && e.target.closest(".rev-more a");
+  if(a) track("see_more_reviews", { page_path: location.pathname });
+});
 
 /* ---------- FAQ accordion ---------- */
 $$(".faq-q").forEach(function(btn){
@@ -378,22 +367,32 @@ $$(".faq-q").forEach(function(btn){
   }, {passive:true});
 })();
 
-/* ---------- legal modals ---------- */
+/* ---------- dialogs (quote thank-you) ----------
+   A dialog opened with a path (the thank-you uses "/thank-you") puts that address in the
+   bar while it's open, so Google Analytics / Ads count it as a page view. Closing it, or
+   pressing Back, returns to where the visitor was. */
+var showModal = function(){};
 (function(){
   var opener = null;
-  function openModal(m){
+  function openModal(m, path){
     opener = document.activeElement;
     m.classList.add("open");
     m.setAttribute("aria-hidden","false");
     document.body.classList.add("is-locked");
     var c = $(".modal-close", m); if(c) c.focus();
+    if(path && location.pathname !== path){
+      try{ history.pushState({ cnsModal: m.id }, "", path); }catch(err){}
+    }
   }
-  function closeModal(m){
+  function closeModal(m, fromBack){
+    if(!m.classList.contains("open")) return;
     m.classList.remove("open");
     m.setAttribute("aria-hidden","true");
     document.body.classList.remove("is-locked");
     if(opener) opener.focus();
+    if(!fromBack && history.state && history.state.cnsModal === m.id) history.back();
   }
+  showModal = function(id, path){ var m = document.getElementById(id); if(m) openModal(m, path); };
   $$("[data-modal]").forEach(function(a){
     a.addEventListener("click", function(e){
       e.preventDefault();
@@ -407,7 +406,13 @@ $$(".faq-q").forEach(function(btn){
   });
   document.addEventListener("keydown", function(e){
     if(e.key !== "Escape") return;
-    $$(".modal.open").forEach(closeModal);
+    $$(".modal.open").forEach(function(m){ closeModal(m); });
+  });
+  // Back button while a dialog is open: just close it.
+  window.addEventListener("popstate", function(){
+    $$(".modal.open").forEach(function(m){
+      if(!(history.state && history.state.cnsModal === m.id)) closeModal(m, true);
+    });
   });
 })();
 
@@ -501,12 +506,19 @@ $$(".faq-q").forEach(function(btn){
     btn.disabled = true;
     btn.style.opacity = ".6";
 
-    function done(msg){
+    function done(msg, title){
       successMsg.textContent = msg;
       form.classList.add("sent");
       btn.disabled = false;
       btn.style.opacity = "";
       form.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block:"center" });
+      // Thank-you pop-up on top of the form's own "Request received" message.
+      var first = (data.name || "").split(" ")[0];
+      var t = $("#ty-title"), m = $("#ty-msg");
+      if(t) t.textContent = title || ("Thank you" + (first ? ", " + first : "") + "!");
+      // The pop-up keeps its own wording; only the email-app fallback needs different instructions.
+      if(m && title) m.textContent = msg;
+      showModal("thanks", "/thank-you");
     }
 
     if(FORM_ENDPOINT){
@@ -565,7 +577,7 @@ $$(".faq-q").forEach(function(btn){
       document.body.appendChild(a);
       a.click();
       setTimeout(function(){ a.remove(); }, 0);
-      done("Your email app should be opening with the details filled in. Hit send and it's on its way. If nothing opened, call or text us on (954) 213-7808.");
+      done("Your email app should be opening with the details filled in. Hit send and it's on its way. If nothing opened, call or text us on (954) 213-7808.", "Almost done!");
     }
   });
 

@@ -78,7 +78,9 @@ for (const loc of locs) {
     let data;
     try { data = JSON.parse(b); } catch (e) { err(file, `invalid JSON-LD: ${e.message}`); continue; }
     if (!data["@context"] || !data["@type"]) err(file, "JSON-LD block missing @context/@type");
-    const urls = [...b.matchAll(/"https?:\/\/[^"]+"/g)].map((m) => m[0].slice(1, -1)).filter((u) => !u.startsWith("https://schema.org"));
+    // sameAs links are meant to point at the business's profiles elsewhere (Google, Facebook…).
+    const sameAs = new Set([data].flatMap((d) => [].concat(d.sameAs || [])));
+    const urls = [...b.matchAll(/"https?:\/\/[^"]+"/g)].map((m) => m[0].slice(1, -1)).filter((u) => !u.startsWith("https://schema.org") && !sameAs.has(u));
     for (const u of urls) if (!u.startsWith(SITE)) err(file, `JSON-LD URL off-domain: ${u}`);
     if (/"(ratingValue|reviewCount|aggregateRating|priceRange)"/.test(b)) err(file, "JSON-LD contains rating/review/price data that the site doesn't publish");
   }
