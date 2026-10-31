@@ -726,3 +726,17 @@ form.qf.sent .ck-tick{animation:draw 350ms var(--ease-out) .55s forwards}
 /* Service-area card: the descriptive line is text, not a link */
 .loc-lines p.loc-line{margin:0;font-weight:500;color:var(--fg-2)}
 .loc-lines p.loc-line:hover{color:var(--fg-2)}
+
+/* ============ PRIVACY / TERMS PAGES ============ */
+.legal-page{padding-top:clamp(130px,16vw,180px)}
+.legal-page h1{font-size:clamp(2rem,5vw,3.4rem);margin-bottom:12px}
+.legal-date{color:var(--fg-3);font-size:.88rem;margin-bottom:clamp(30px,4vw,48px)}
+.legal-prose h2{font-size:clamp(1.15rem,2vw,1.45rem);margin:40px 0 12px}
+.legal-prose h2:first-child{margin-top:0}
+.legal-prose a{color:var(--red-2);text-decoration:underline;text-underline-offset:3px}
+.legal-prose b,.legal-prose strong{color:#fff}
+.legal-switch{display:flex;flex-wrap:wrap;gap:12px;margin-top:56px;padding-top:28px;border-top:1px solid var(--line)}
+.legal-switch a{border:1px solid var(--line-2);border-radius:var(--r);padding:10px 16px;font-family:'Archivo',system-ui,sans-serif;font-weight:700;
+  font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-2);transition:border-color .2s ease,color .2s ease}
+.legal-switch a:hover{color:#fff;border-color:var(--fg-3)}
+.legal-switch a[aria-current="page"]{border-color:var(--red);color:#fff}
