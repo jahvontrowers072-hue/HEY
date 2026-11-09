@@ -86,7 +86,10 @@ const BUSINESS = {
   // Google Business Profile — shown in the Reviews section. Update the numbers now and then.
   google: {
     rating: "4.9",
-    reviewCount: 179,
+    reviewCount: 183,
+    // Opens Google's "write a review" box for the business (stars + text), no searching needed.
+    // Also reachable as the short link /review (see vercel.json) to text to customers.
+    writeReviewUrl: "https://search.google.com/local/writereview?placeid=ChIJ110AFPQH2YgR6NVdfuFerBg",
     // Opens your profile straight on the Reviews tab.
     reviewsUrl: "https://www.google.com/maps/place/C+%26+N+spotless+mobile+tinting/data=!4m8!3m7!1s0x88d907f414005dd7:0x18ac5ee17e5dd5e8!8m2!3d26.2762594!4d-80.2374455!9m1!1b1!16s%2Fg%2F11frdgv8s3",
   },
@@ -667,11 +670,11 @@ function reviewsHtml() {
         <blockquote>${esc(r.text)}</blockquote>
         <cite>${esc(r.name)}<span>Google review${r.when ? ` · ${esc(r.when)}` : ""}</span></cite>
       </article>`).join("\n");
+  const arrow = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>`;
   const button = `    <div class="rev-more rv">
-      <a class="btn btn-red" href="${g.reviewsUrl}" target="_blank" rel="noopener">See more reviews
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-      </a>
-      <span>Opens our Google profile</span>
+      <a class="btn btn-red" href="${g.writeReviewUrl}" target="_blank" rel="noopener" data-review="write">Leave a review ${arrow}</a>
+      <a class="btn btn-ghost" href="${g.reviewsUrl}" target="_blank" rel="noopener" data-review="read">See more reviews ${arrow}</a>
+      <span>Had us out? Leaving a review takes about 30 seconds on Google.</span>
     </div>`;
   return [score, REVIEWS.length ? `    <div class="rev-grid">\n${cards}\n    </div>` : "", button].filter(Boolean).join("\n");
 }

@@ -261,10 +261,12 @@ document.addEventListener("click", function(e){
   if(a) track("click_to_call", { link_url: a.getAttribute("href"), page_path: location.pathname });
 });
 
-/* ---------- reviews: count clicks on "See more reviews" ---------- */
+/* ---------- reviews: count "Leave a review" and "See more reviews" clicks ---------- */
 document.addEventListener("click", function(e){
-  var a = e.target.closest && e.target.closest(".rev-more a");
-  if(a) track("see_more_reviews", { page_path: location.pathname });
+  var a = e.target.closest && e.target.closest('[data-review], a[href="/review"]');
+  if(!a) return;
+  var write = a.getAttribute("data-review") === "write" || a.getAttribute("href") === "/review";
+  track(write ? "leave_review_click" : "see_more_reviews", { page_path: location.pathname });
 });
 
 /* ---------- FAQ accordion ---------- */

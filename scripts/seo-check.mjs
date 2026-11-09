@@ -98,6 +98,10 @@ for (const loc of locs) {
 // Every page on disk (including 404): links, forbidden domains
 const pages = fs.readdirSync(ROOT).filter((f) => f.endsWith(".html"));
 const homeIds = new Set([...read("index.html").matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]));
+// Short links handled by redirects in vercel.json (e.g. /review → Google's review box) are valid links.
+const redirectPaths = new Set(
+  (JSON.parse(fs.readFileSync(path.join(ROOT, "..", "vercel.json"), "utf8")).redirects || [])
+    .filter((r) => !r.has && !r.source.includes(":")).map((r) => r.source));
 for (const file of pages) {
   const html = read(file);
   for (const re of FORBIDDEN) if (re.test(html)) err(file, `contains forbidden/placeholder value ${re}`);
@@ -106,6 +110,7 @@ for (const file of pages) {
     if (href === "#" ) continue;                                  // JS-driven controls (modals)
     if (href.startsWith("#")) { if (!ids.has(href.slice(1))) err(file, `anchor ${href} has no target`); continue; }
     const [p, hash] = href.split("#");
+    if (redirectPaths.has(p)) continue;
     const target = fileFor(p);
     if (!target) { err(file, `broken internal link ${href}`); continue; }
     if (hash) {
