@@ -778,3 +778,19 @@ form.qf.sent .ck-tick{animation:draw 350ms var(--ease-out) .55s forwards}
   .ty.open .ty-box h2,.ty.open .ty-box p,.ty.open .ty-btns{animation:fadeIn 300ms ease both}
   .ty-check .ck-ring,.ty-check .ck-tick{stroke-dashoffset:0;animation:none!important}
 }
+
+/* Top bar "Leave a Review" button: on phones it lives in the menu instead (not enough room). */
+@media (max-width:560px){.nav-review{display:none}}
+.nav-links a,.nav-tel,.nav-cta .btn{white-space:nowrap}
+@media (min-width:1081px){
+  .nav-in{gap:18px}
+  .nav-links{gap:20px}
+  .nav-cta{gap:10px}
+  .nav-cta .btn-sm{padding:12px 16px}
+}
+/* Small laptops: phone shows as just its icon so all the buttons fit (tap still calls). */
+@media (max-width:1240px) and (min-width:1081px){
+  .nav-tel{font-size:0;gap:0;width:40px;height:40px;justify-content:center;border:1px solid var(--line-2);border-radius:var(--r)}
+  .nav-tel svg{width:17px;height:17px}
+  .nav-links{gap:16px}
+}
