@@ -50,11 +50,6 @@
       "permanent": true
     },
     {
-      "source": "/review",
-      "destination": "https://search.google.com/local/writereview?placeid=ChIJ110AFPQH2YgR6NVdfuFerBg",
-      "permanent": false
-    },
-    {
       "source": "/automotive-window-tinting",
       "destination": "/automotive-window-tint",
       "permanent": true
