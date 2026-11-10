@@ -779,8 +779,21 @@ form.qf.sent .ck-tick{animation:draw 350ms var(--ease-out) .55s forwards}
   .ty-check .ck-ring,.ty-check .ck-tick{stroke-dashoffset:0;animation:none!important}
 }
 
-/* Top bar "Leave a Review" button: on phones it lives in the menu instead (not enough room). */
-@media (max-width:560px){.nav-review{display:none}}
+/* Top bar "Leave a Review" button stays visible on every screen.
+   Phones and small tablets: both buttons use short labels ("Quote", "Review") so they fit. */
+@media (max-width:600px){
+  .nav-cta .cta-long{display:none}
+  .nav-cta .cta-short{display:inline}
+  .nav-cta{gap:8px}
+  .nav-cta .btn-sm{padding:11px 12px}
+}
+@media (max-width:400px){
+  .brand img,.nav.scrolled .brand img{width:122px}
+  .nav-in{gap:8px}
+  .nav-cta{gap:6px}
+  .nav-cta .btn-sm{padding:10px 10px;font-size:.66rem}
+  .burger{width:40px;height:40px}
+}
 .nav-links a,.nav-tel,.nav-cta .btn{white-space:nowrap}
 @media (min-width:1081px){
   .nav-in{gap:18px}
@@ -793,4 +806,8 @@ form.qf.sent .ck-tick{animation:draw 350ms var(--ease-out) .55s forwards}
   .nav-tel{font-size:0;gap:0;width:40px;height:40px;justify-content:center;border:1px solid var(--line-2);border-radius:var(--r)}
   .nav-tel svg{width:17px;height:17px}
   .nav-links{gap:16px}
+}
+@media (max-width:340px){
+  .brand img,.nav.scrolled .brand img{width:104px}
+  .nav-cta .btn-sm{padding:10px 8px}
 }
