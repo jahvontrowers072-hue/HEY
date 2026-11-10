@@ -128,18 +128,40 @@ document.addEventListener("keydown", function(e){
 });
 
 /* ---------- smooth scroll with sticky-nav offset ---------- */
+// On phones and tablets the quote section is stacked (contact info first, form below),
+// so "Get a Quote" buttons go straight to the form instead of the info.
+function scrollTargetFor(id){
+  var t = document.querySelector(id);
+  if(id === "#quote" && t){
+    var info = $(".quote-info", t), form = $("#quoteForm", t);
+    if(info && form && form.getBoundingClientRect().top >= info.getBoundingClientRect().bottom - 1) return form;
+  }
+  return t;
+}
+function scrollToTarget(id, behavior){
+  var t = scrollTargetFor(id);
+  if(!t) return false;
+  var off = nav.offsetHeight - 1;
+  var y = t.getBoundingClientRect().top + window.pageYOffset - (id === "#top" ? 0 : off);
+  window.scrollTo({ top: Math.max(0,y), behavior: behavior });
+  return true;
+}
 $$('a[href^="#"]').forEach(function(a){
   a.addEventListener("click", function(e){
     var id = a.getAttribute("href");
     if(!id || id === "#" || a.hasAttribute("data-modal")) return;
-    var t = document.querySelector(id);
-    if(!t) return;
+    if(!document.querySelector(id)) return;
     e.preventDefault();
-    var off = nav.offsetHeight - 1;
-    var y = t.getBoundingClientRect().top + window.pageYOffset - (id === "#top" ? 0 : off);
-    window.scrollTo({ top: Math.max(0,y), behavior: reduce ? "auto" : "smooth" });
+    scrollToTarget(id, reduce ? "auto" : "smooth");
   });
 });
+// Arriving from another page via /#quote (e.g. a service page's quote button): land on the form too.
+// (Runs just after the browser's own jump to #quote, which would otherwise win.)
+if(location.hash === "#quote"){
+  window.addEventListener("load", function(){
+    setTimeout(function(){ scrollToTarget("#quote", "auto"); }, 80);
+  });
+}
 
 /* ---------- reveal on scroll ---------- */
 var rvs = $$(".rv");
